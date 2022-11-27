@@ -1,0 +1,17 @@
+.navbar-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 24px;
+}
+
+.navbar-logo-img {
+    width: 100px;
+    height: 34px;
+}
+
+.navbar-text {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+}
