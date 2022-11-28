@@ -1,3 +1,63 @@
 .navbar-hero-bg {
     background-color: #F1F3FF;
 }
+
+.whyus-thumbs-icon-bg {
+    width: 32px;
+    height: 32px;
+    background-color: #F9CC00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.whyus-tag-icon-bg {
+    width: 32px;
+    height: 32px;
+    background-color: #FA2C5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.whyus-clock-icon-bg {
+    width: 32px;
+    height: 32px;
+    background-color: #0D28A6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.whyus-award-icon-bg {
+    width: 32px;
+    height: 32px;
+    background-color: #5CB85F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin-bottom: 16px;
+}

@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding-top: 100px;
 }
 
 .ourservices-image-img {
@@ -11,12 +12,24 @@
 
 .ourservices-desc-bg {
     width: 468px;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.ourservices-title {
+    margin-bottom: 24px;
 }
 
 .ourservices-title-h3 {
     font-weight: 700;
     font-size: 24px;
     line-height: 36px;
+}
+
+.ourservices-text {
+    margin-bottom: 16px;
 }
 
 .ourservices-text-p {
@@ -28,6 +41,7 @@
 .ourservices-text-list {
     display: flex;
     flex-direction: row;
+    margin-bottom: 16px;
 }
 
 .ourservices-check-bg {

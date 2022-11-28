@@ -15,3 +15,11 @@
     justify-content: space-between;
     width: 320px;
 }
+
+.navbar-text-a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}

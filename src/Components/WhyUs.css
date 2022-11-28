@@ -1,0 +1,63 @@
+.whyus-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 360px;
+    margin-right: auto;
+    padding-top: 100px;
+}
+
+.whyus-title {
+    margin-bottom: 16px;
+}
+
+.whyus-title-h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.whyus-desc {
+    margin-bottom: 40px;
+}
+
+.whyus-desc-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.whyus-card-area {
+    display: flex;
+    width: 1168px;
+    gap: 32px;
+}
+
+.whyus-card {
+    width: 268px;
+    height: 100%;
+    border: 1px solid #D0D0D0;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.whyus-card-title {
+    margin-bottom: 16px;
+}
+
+.whyus-card-title-h5 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.whyus-card-desc-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
