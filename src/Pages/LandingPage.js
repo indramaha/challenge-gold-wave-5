@@ -7,7 +7,6 @@ import ThumbsUpIcon from '../Assets/fi_thumbs-up.png'
 import TagPriceIcon from '../Assets/fi_tag.png'
 import ClockIcon from '../Assets/fi_clock.png'
 import AwardIcon from '../Assets/fi_award.png'
-import {FiFacebook, FiInstagram, FiTwitter, FiMail, FiTwitch} from 'react-icons/fi'
 
 import './LandingPage.css'
 import Testimonial from "../Components/Testimonial";
@@ -63,29 +62,6 @@ const LandingPage = () => {
             desc: 'Sopir yang profesional, berpengalaman, jujur, ramah dan selalu tepat waktu',
         },
     ])
-    const [footerDesc, setFooterDesc] = useState([
-        {
-            no: 1,
-            footer1: 'Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000',
-            footer2: 'binarcarrental@gmail.com',
-            footer3: '081-233-334-808',
-        },
-        {
-            no: 2,
-            footer2: 'Our services',
-            footer2: 'Why Us',
-            footer2: 'Testimonial',
-            footer2: 'FAQ',
-        },
-        {
-            no: 3,
-            footer3: <FiFacebook />,
-            footer3: <FiInstagram />,
-            footer3: <FiTwitter />,
-            footer3: <FiMail />,
-            footer3: <FiTwitch />,
-        }
-    ])
     return(
         <div>
             <div className="navbar-hero-bg">
@@ -95,7 +71,7 @@ const LandingPage = () => {
             <OurServices servicesText={servicesDesc}/>
             <WhyUs whyUsCardText={whyUsCardDesc}/>
             <Banner />
-            <Footer footerContent={footerDesc}/>
+            <Footer />
         </div>
     )
 }
