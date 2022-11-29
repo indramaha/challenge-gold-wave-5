@@ -1,8 +1,6 @@
 .whyus-section {
     display: flex;
-    flex-direction: column;
-    margin-left: 360px;
-    margin-right: auto;
+    justify-content: center;
     padding-top: 100px;
 }
 
@@ -60,4 +58,10 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
+}
+
+@media only screen and (max-width:430px){
+    .whyus-section {
+        display: none
+    }
 }

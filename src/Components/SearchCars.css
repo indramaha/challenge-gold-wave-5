@@ -1,0 +1,91 @@
+.searchcars-section {
+    display: flex;
+    justify-content: center;
+}
+
+.searchcars-bg {
+    display: flex;
+    padding: 24px;
+    gap: 16px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.searchcars-input-bg {
+    display: flex;
+    border: 1px solid #CCCCCC;
+    padding: 9px 12px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 219px;
+}
+
+.searchcars-input-title {
+    margin-bottom: 4px;
+}
+
+.searchcars-input-title-p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.searchcars-input-name {
+    border: 0;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+}
+
+.searchcars-input-category-price {
+    border: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.searchcars-input-status {
+    border: 0;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.searchcars-seacrh-button-bg {
+    display: flex;
+    align-items: flex-end;
+}
+
+.searchcars-seacrh-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    background-color: #5CB85F;
+    border: 0;
+    color: white;
+    width: 92px;
+    height: 36px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}

@@ -23,3 +23,20 @@
     font-size: 14px;
     line-height: 20px;
 }
+
+.navbar-hamburger {
+    display: none;
+}
+
+
+@media only screen and (max-width:430px){
+    .navbar-hamburger {
+        display: block;
+    }
+
+    .navbar-text {
+        display: none;
+    }
+
+
+}
