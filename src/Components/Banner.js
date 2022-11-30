@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './Banner.css'
 
 const Banner = () => {
@@ -12,7 +13,7 @@ const Banner = () => {
                     <p className='banner-card-text-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                 </div>
                 <div className='banner-card-button-bg'>
-                    <button className='banner-card-button'>Mulai Sewa Mobil</button>
+                    <Link to='/searchcar'><button className='banner-card-button'>Mulai Sewa Mobil</button></Link>
                 </div>
             </div>
         </div>

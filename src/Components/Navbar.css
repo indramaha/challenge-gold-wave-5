@@ -1,42 +1,17 @@
 .navbar-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 24px;
+    background-color: #F1F3FF;
+    padding-top: 24px !important;
 }
 
-.navbar-logo-img {
-    width: 100px;
-    height: 34px;
+.navbar-item-link {
+    color: black !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 20px !important;
+    padding: 0 !important;
 }
 
-.navbar-text {
-    display: flex;
-    justify-content: space-between;
-    width: 320px;
-}
-
-.navbar-text-a {
-    text-decoration: none;
-    color: black;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-.navbar-hamburger {
-    display: none;
-}
-
-
-@media only screen and (max-width:430px){
-    .navbar-hamburger {
-        display: block;
-    }
-
-    .navbar-text {
-        display: none;
-    }
-
-
+.navbar-item {
+    justify-content: end;
+    gap: 32px;
 }

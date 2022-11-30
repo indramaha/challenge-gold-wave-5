@@ -1,33 +1,42 @@
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link } from 'react-router-dom';
 import LogoNavbar from '../Assets/logo.png'
-import {FiMenu, FiX} from 'react-icons/fi'
 import './Navbar.css'
-import { useState } from 'react'
 
 const NavBar = () =>{
-    const [click, setClick] = useState(false)
-    const handleClick = () => {
-        return(
-            setClick(!click)
-        )
-    }
-
     return(
-        <header >
-            <nav className='navbar-section'>
-                <div>
-                    <img src={LogoNavbar} alt='logo-navbar' className='navbar-logo-img'/>
-                </div>
-                <div className={click ? "navbar-text" : "navbar-text"}>
-                    <a href='' className='navbar-text-a'>Our Services</a>
-                    <a href='' className='navbar-text-a'>Why Us</a>
-                    <a href='' className='navbar-text-a'>Testimonial</a>
-                    <a href='' className='navbar-text-a'>FAQ</a>
-                </div>
-                <div className='navbar-hamburger' onClick={handleClick} >
-                    {click ? (<FiX />) : (<FiMenu />)}
-                </div>
-            </nav>
-        </header>
+        <>
+          {['lg'].map((expand) => (
+            <Navbar key={expand} expand={expand} className="navbar-section">
+              <Container>
+                <Link to='/'><Navbar.Brand href="#"><img src={LogoNavbar} /></Navbar.Brand></Link>
+                <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+                <Navbar.Offcanvas
+                  id={`offcanvasNavbar-expand-${expand}`}
+                  aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+                  placement="end"
+                >
+                  <Offcanvas.Header closeButton>
+                    <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+                      Offcanvas
+                    </Offcanvas.Title>
+                  </Offcanvas.Header>
+                  <Offcanvas.Body>
+                    <Nav className="flex-grow-1 navbar-item">
+                      <Nav.Link href="#action1" className='navbar-item-link'>Our Services</Nav.Link>
+                      <Nav.Link href="#action2" className='navbar-item-link'>Why Us</Nav.Link>
+                      <Nav.Link href="#action2" className='navbar-item-link'>Testimonial</Nav.Link>
+                      <Nav.Link href="#action2" className='navbar-item-link'>FAQ</Nav.Link>
+                    </Nav>
+                  </Offcanvas.Body>
+                </Navbar.Offcanvas>
+              </Container>
+            </Navbar>
+          ))}
+        </>
     )
 }
 

@@ -8,10 +8,8 @@ import './SearchCarsPage.css'
 const SearchCarsPage = () => {
     return(
         <div>
-            <div className="searchcarspage-hero-bg">
-                <NavBar />
-                <Hero />
-            </div>
+            <NavBar />
+            <Hero />
             <SearchCars />
             <Footer />
         </div>

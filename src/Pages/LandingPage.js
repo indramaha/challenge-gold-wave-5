@@ -7,11 +7,13 @@ import ThumbsUpIcon from '../Assets/fi_thumbs-up.png'
 import TagPriceIcon from '../Assets/fi_tag.png'
 import ClockIcon from '../Assets/fi_clock.png'
 import AwardIcon from '../Assets/fi_award.png'
+import RatingTesti from '../Assets/Star 1.png'
 
 import './LandingPage.css'
 import Testimonial from "../Components/Testimonial";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
+import FAQ from "../Components/FAQ";
 
 const LandingPage = () => {
     const [servicesDesc, setServicesDesc] = useState([
@@ -62,15 +64,37 @@ const LandingPage = () => {
             desc: 'Sopir yang profesional, berpengalaman, jujur, ramah dan selalu tepat waktu',
         },
     ])
+    const [ratingTesti, setRatingTesti] = useState([
+        {
+            no: 1,
+            rating: <img src={RatingTesti} alt='star'/>,
+        },
+        {
+            no: 2,
+            rating: <img src={RatingTesti} alt='star'/>,
+        },
+        {
+            no: 3,
+            rating: <img src={RatingTesti} alt='star'/>,
+        },
+        {
+            no: 4,
+            rating: <img src={RatingTesti} alt='star'/>,
+        },
+        {
+            no: 5,
+            rating: <img src={RatingTesti} alt='star'/>,
+        },
+    ])
     return(
         <div>
-            <div className="navbar-hero-bg">
-                <NavBar />
-                <Hero />
-            </div>
+            <NavBar />
+            <Hero />
             <OurServices servicesText={servicesDesc}/>
             <WhyUs whyUsCardText={whyUsCardDesc}/>
+            <Testimonial star={ratingTesti}/>
             <Banner />
+            <FAQ />
             <Footer />
         </div>
     )

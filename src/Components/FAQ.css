@@ -1,0 +1,39 @@
+.faq {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+.faq-title {
+    width: 368px;
+}
+
+.faq-title-h3-bg {
+    margin-bottom: 16px;
+}
+
+.faq-title-h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.faq-title-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.faq-accord {
+    width: 668px;
+}
+
+.faq-accord-item {
+    margin-bottom: 16px;
+    border: 1px solid #D4D4D4 !important;
+    border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    -ms-border-radius: 4px !important;
+    -o-border-radius: 4px !important;
+}

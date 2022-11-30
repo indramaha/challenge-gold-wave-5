@@ -1,4 +1,5 @@
 import CarImage from '../Assets/img_car.png'
+import { Link } from 'react-router-dom'
 import './Hero.css'
 
 const Hero = () => {
@@ -14,7 +15,7 @@ const Hero = () => {
                     </p>
                 </div>
                 <div>
-                    <button className='hero-button'>Mulai Sewa Mobil</button>
+                    <Link to='/searchcar'><button className='hero-button'>Mulai Sewa Mobil</button></Link>
                 </div>
             </div>
             <div>
