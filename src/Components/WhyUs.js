@@ -3,7 +3,7 @@ import './WhyUs.css'
 
 const WhyUs = (props) => {
     return(
-        <div className='whyus-section'>
+        <div className='whyus-section' id='whyus'>
             <div>
                 <div className='whyus-title'>
                     <h3 className='whyus-title-h3'>Why Us?</h3>

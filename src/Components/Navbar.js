@@ -12,7 +12,7 @@ const NavBar = () =>{
           {['lg'].map((expand) => (
             <Navbar key={expand} expand={expand} className="navbar-section">
               <Container>
-                <Link to='/'><Navbar.Brand><img src={LogoNavbar} /></Navbar.Brand></Link>
+                <Link to='/'><Navbar.Brand><img src={LogoNavbar} alt='logo' /></Navbar.Brand></Link>
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                 <Navbar.Offcanvas
                   id={`offcanvasNavbar-expand-${expand}`}
@@ -27,10 +27,10 @@ const NavBar = () =>{
                   </Offcanvas.Header>
                   <Offcanvas.Body>
                     <Nav className="flex-grow-1 navbar-item">
-                      <Nav.Link href="#action1" className='navbar-item-link'>Our Services</Nav.Link>
-                      <Nav.Link href="#action2" className='navbar-item-link'>Why Us</Nav.Link>
-                      <Nav.Link href="#action2" className='navbar-item-link'>Testimonial</Nav.Link>
-                      <Nav.Link href="#action2" className='navbar-item-link'>FAQ</Nav.Link>
+                      <Nav.Link href="#ourservices" className='navbar-item-link'>Our Services</Nav.Link>
+                      <Nav.Link href="#whyus" className='navbar-item-link'>Why Us</Nav.Link>
+                      <Nav.Link href="#testimonial" className='navbar-item-link'>Testimonial</Nav.Link>
+                      <Nav.Link href="#faq" className='navbar-item-link'>FAQ</Nav.Link>
                     </Nav>
                   </Offcanvas.Body>
                 </Navbar.Offcanvas>

@@ -4,7 +4,7 @@ import './OurServices.css'
 
 const OurServices = (props) => {
     return(
-        <div className='ourservices-section'>
+        <div className='ourservices-section' id='ourservices'>
             <div className='ourservices-image-bg'>
                 <img src={ServicesImage} alt='services' className='ourservices-image-img'/>
             </div>

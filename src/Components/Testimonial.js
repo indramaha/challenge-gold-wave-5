@@ -6,7 +6,7 @@ import './Testimonial.css'
 
 const Testimonial = (props) => {
     return (
-        <div className='testimonial-section'>
+        <div className='testimonial-section' id='testimonial'>
             <div className='testimonial-title-bg'>
                 <div className='testimonial-title-h3-bg'>
                     <h3 className='testimonial-title-h3'>Testimonial</h3>
