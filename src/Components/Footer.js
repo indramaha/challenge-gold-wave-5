@@ -1,4 +1,5 @@
 import {FiFacebook, FiInstagram, FiTwitter, FiMail, FiTwitch} from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 import LogoFooter from '../Assets/logo.png'
 import './Footer.css'
 
@@ -57,7 +58,7 @@ const Footer = () => {
                     <p className='footer-copyright-p'>Copyright Binar 2022</p>
                 </div>
                 <div>
-                    <img src={LogoFooter} alt='logo-footer' />
+                    <Link to='/'><img src={LogoFooter} alt='logo-footer' /></Link>
                 </div>
             </div>
         </div>

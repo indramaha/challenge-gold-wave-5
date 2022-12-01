@@ -19,11 +19,11 @@ const Testimonial = (props) => {
             </div>
             <Carousel variant='dark'>
                 <Carousel.Item>
-                <img
+                    <img
                         className="d-block testimonial-item-img"
                         src={Holder}
                         alt="first slide"
-                />
+                    />
                     <div className='testimonial-item-desc'>
                         <div className='testimonial-item-img-bg'>
                             <img src={TestiPhotoTwo} alt='testiphoto' />

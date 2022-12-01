@@ -1,6 +1,6 @@
 .footer-section {
-    padding-top: 150px;
-    padding-bottom: 100px;
+    margin-top: 150px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -93,6 +93,17 @@
 
 @media only screen and (max-width:430px){
     .footer-section {
-        display: none
+        margin-top: 60px;
+        margin-bottom: 60px;
+        display: flex;
+        flex-direction: column;
+        padding: 0 16px;
+    }
+
+    .footer-icons {
+        margin-bottom: 16px;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
     }
 }

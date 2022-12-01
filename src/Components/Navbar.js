@@ -12,16 +12,17 @@ const NavBar = () =>{
           {['lg'].map((expand) => (
             <Navbar key={expand} expand={expand} className="navbar-section">
               <Container>
-                <Link to='/'><Navbar.Brand href="#"><img src={LogoNavbar} /></Navbar.Brand></Link>
+                <Link to='/'><Navbar.Brand><img src={LogoNavbar} /></Navbar.Brand></Link>
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                 <Navbar.Offcanvas
                   id={`offcanvasNavbar-expand-${expand}`}
                   aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
                   placement="end"
+                  className='navbar-offcan'
                 >
                   <Offcanvas.Header closeButton>
                     <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                      Offcanvas
+                      BCR
                     </Offcanvas.Title>
                   </Offcanvas.Header>
                   <Offcanvas.Body>

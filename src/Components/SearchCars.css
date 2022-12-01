@@ -1,6 +1,15 @@
 .searchcars-section {
     display: flex;
     justify-content: center;
+    position: absolute;
+    top: 450px;
+    background-color: white;
+    left: 420px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }
 
 .searchcars-bg {
@@ -86,4 +95,20 @@
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
+}
+
+@media only screen and (max-width:1440px) {
+    .searchcars-section {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 450px;
+        background-color: white;
+        left: 170px;
+        border-radius: 8px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+    }
 }

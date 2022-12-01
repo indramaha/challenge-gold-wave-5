@@ -3,6 +3,10 @@
     padding-top: 24px !important;
 }
 
+.navbar-offcan {
+    width: 50% !important;
+}
+
 .navbar-item-link {
     color: black !important;
     font-size: 14px !important;

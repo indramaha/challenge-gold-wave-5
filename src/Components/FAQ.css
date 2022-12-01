@@ -1,7 +1,8 @@
-.faq {
+.faq-section {
     display: flex;
     justify-content: space-evenly;
     margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .faq-title {
@@ -36,4 +37,33 @@
     -moz-border-radius: 4px !important;
     -ms-border-radius: 4px !important;
     -o-border-radius: 4px !important;
+}
+
+@media only screen and (max-width:430px) {
+    .faq-section {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        padding: 0 16px;
+    }
+
+    .faq-title {
+        width: 100%;
+    }
+
+    .faq-title-h3-bg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    .faq-title-p-bg {
+        display: flex;
+        justify-content: center;
+    }
+
+    .faq-accord {
+        width: 100%;
+    }
 }

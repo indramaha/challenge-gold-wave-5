@@ -4,12 +4,12 @@ import './FAQ.css'
 
 const FAQ = () => {
     return (
-        <div className='faq'>
+        <div className='faq-section'>
             <div className='faq-title'>
                 <div className='faq-title-h3-bg'>
                     <h3 className='faq-title-h3'>Frequently Asked Question</h3>
                 </div>
-                <div>
+                <div className='faq-title-p-bg'>
                     <p className='faq-title-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </div>
             </div>
