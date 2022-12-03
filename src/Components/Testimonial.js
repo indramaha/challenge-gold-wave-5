@@ -31,9 +31,9 @@ const Testimonial = (props) => {
                         <div>
                             <div className='testimonial-ratings'>
                                 {
-                                    props.star.map(item => {
+                                    props.star.map((item, i) => {
                                         return(
-                                            <div>
+                                            <div key={i}>
                                                 {item.rating}
                                             </div>
                                         ) 
@@ -66,9 +66,9 @@ const Testimonial = (props) => {
                         <div>
                             <div className='testimonial-ratings'>
                                 {
-                                    props.star.map(item => {
+                                    props.star.map((item, i) => {
                                         return(
-                                            <div>
+                                            <div key={i}>
                                                 {item.rating}
                                             </div>
                                         ) 
@@ -101,9 +101,9 @@ const Testimonial = (props) => {
                         <div>
                             <div className='testimonial-ratings'>
                                 {
-                                    props.star.map(item => {
+                                    props.star.map((item, i) => {
                                         return(
-                                            <div>
+                                            <div key={i}>
                                                 {item.rating}
                                             </div>
                                         ) 

@@ -1,8 +1,14 @@
 import CarImage from '../Assets/img_car.png'
 import { Link } from 'react-router-dom'
 import './Hero.css'
+import { useState } from 'react'
 
-const Hero = () => {
+const Hero = (props) => {
+    const [click, setClick] = useState(true)
+    const handleClick = () => {
+        setClick(false)
+    }
+
     return(
         <div className="hero-section">
             <div className='hero-desc'>
@@ -15,7 +21,12 @@ const Hero = () => {
                     </p>
                 </div>
                 <div>
-                    <Link to='/searchcar'><button className='hero-button'>Mulai Sewa Mobil</button></Link>
+                    {
+                        props.isBtnShow ? (<Link to='/searchcar'>
+                        <button onClick={handleClick} className='hero-button'>Mulai Sewa Mobil</button>
+                        </Link>): null
+                    }
+                    
                 </div>
             </div>
             <div>

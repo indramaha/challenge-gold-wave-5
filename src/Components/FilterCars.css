@@ -1,4 +1,4 @@
-.searchcars-section {
+.filtercars-section {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -12,10 +12,10 @@
     -o-border-radius: 8px;
 }
 
-.searchcars-bg {
+.filtercars-bg {
     display: flex;
+    flex-direction: column;
     padding: 24px;
-    gap: 16px;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -24,51 +24,64 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
 
-.searchcars-input-bg {
-    display: flex;
-    border: 1px solid #CCCCCC;
-    padding: 9px 12px;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    width: 219px;
+.filtercars-top {
+    margin-bottom: 16px;
 }
 
-.searchcars-input-title {
+.filtercars-top-p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.filtercars-search-bg {
+    display: flex;
+    gap: 16px;
+}
+
+.filtercars-input-title {
     margin-bottom: 4px;
 }
 
-.searchcars-input-title-p {
+.filtercars-input-title-p {
     font-family: 'Rubik', sans-serif;
     font-weight: 300;
     font-size: 12px;
     line-height: 18px;
 }
 
-.searchcars-input-name {
+.filtercars-input-name {
     border: 0;
     font-size: 12px;
     font-weight: 300;
     line-height: 18px;
     font-family: 'Rubik', sans-serif;
-    width: 100%;
+    border: 1px solid #CCCCCC;
+    padding: 9px 12px;
+    width: 210px;
 }
 
-.searchcars-input-category-price {
-    border: 0;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
+.filtercars-select {
+    width: 210px !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    font-size: 12px !important;
+    color:  #8A8A8A !important;
 }
 
-.searchcars-input-status {
+.filtercars-dropdown {
+    width: 210px;
+    background-color: transparent !important;
+    color:  #8A8A8A !important;
+    border: 1px solid #CCCCCC !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 18px !important;
+    padding: 9px 12px !important;
+}
+
+.filtercars-input-status {
     border: 0;
     font-size: 12px;
     font-weight: 700;
@@ -77,12 +90,12 @@
     width: 100%;
 }
 
-.searchcars-seacrh-button-bg {
+.filtercars-seacrh-button-bg {
     display: flex;
     align-items: flex-end;
 }
 
-.searchcars-seacrh-button {
+.filtercars-seacrh-button {
     padding: 8px 12px;
     font-size: 14px;
     font-weight: 700;
@@ -98,7 +111,7 @@
 }
 
 @media only screen and (max-width:1440px) {
-    .searchcars-section {
+    .filtercars-section {
         display: flex;
         justify-content: center;
         position: absolute;

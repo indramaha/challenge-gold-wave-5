@@ -17,9 +17,9 @@ const OurServices = (props) => {
                 </div>
                 <div>
                     {
-                        props.servicesText.map(item =>{
+                        props.servicesText.map((item, i) =>{
                             return(
-                                <div className='ourservices-text-list'>
+                                <div className='ourservices-text-list' key={i}>
                                     <div className='ourservices-check-bg'>
                                         <FiCheck size={16} className='ourservices-check-icon'/>
                                     </div>

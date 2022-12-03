@@ -13,9 +13,9 @@ const WhyUs = (props) => {
                 </div>
                 <div className='whyus-card-area'>
                         {
-                            props.whyUsCardText.map(item => {
+                            props.whyUsCardText.map((item, i) => {
                                 return(
-                                    <div className='whyus-card'>
+                                    <div className='whyus-card' key={i}>
                                         {item.icon}
                                         <div className='whyus-card-title'>
                                             <h5 className='whyus-card-title-h5'>{item.title}</h5>
