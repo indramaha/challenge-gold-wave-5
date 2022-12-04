@@ -4,6 +4,9 @@
     gap: 24px;
     margin-top: 110px;
     justify-content: center;
+    width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .carsshow-card {

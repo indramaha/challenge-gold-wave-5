@@ -16,8 +16,8 @@ const FilterCars = (props) => {
                         <div className='filtercars-input-bg'>
                             <input
                                 onChange={props.nameFilter}
-                                className='filtercars-input-name'
-                                placeholder='Ketik nama/tipe mobil'
+                                className={props.isInputDisable ? 'filtercars-input-name-disable' : 'filtercars-input-name'}
+                                placeholder={props.isInputDisable ? null : 'Ketik nama/tipe mobil'}
                             />
                         </div>
                     </div>
@@ -26,7 +26,7 @@ const FilterCars = (props) => {
                             <p className='filtercars-input-title-p'>Kategori</p>
                         </div>
                         <div>
-                            <Form.Select onChange={props.categoryFilter} className='filtercars-select'>
+                            <Form.Select onChange={props.categoryFilter} className={props.isInputDisable ? 'filtercars-select-disable':'filtercars-select'}>
                                 <option value={''}>-Masukan Kapasitas Mobil-</option>
                                 <option value={'small'}>2-4 orang</option>
                                 <option value={'Medium'}>4-6 orang</option>
@@ -38,13 +38,22 @@ const FilterCars = (props) => {
                         <div className='filtercars-input-title'>
                             <p className='filtercars-input-title-p'>Harga</p>
                         </div>
-                        <div>
-                            <Form.Select className='filtercars-select'>
-                                <option>-Masukan Harga Sewa per Hari-</option>
-                                <option>&lt;Rp.400.000</option>
-                                <option>Rp.400.000-Rp.600.000</option>
-                                <option>&gt;Rp.600.000</option>
-                            </Form.Select>
+                        <div className='filtercars-input-harga'>
+                            <div>
+                                <input 
+                                    onChange={props.minPriceFilter}
+                                    placeholder={props.isInputDisable ? null : 'minimal harga'}
+                                    className={props.isInputDisable ? 'filtercars-input-name-disable' : 'filtercars-input-name'}
+                                />
+                            </div>
+                            <div>
+                                <input 
+                                    onChange={props.maxPriceFilter}
+                                    placeholder={props.isInputDisable ? null : 'maksimal harga'}
+                                    className={props.isInputDisable ? 'filtercars-input-name-disable' : 'filtercars-input-name'}
+                                />
+                            </div>
+                            
                         </div>
                     </div>
                     <div>
@@ -52,7 +61,7 @@ const FilterCars = (props) => {
                             <p className='filtercars-input-title-p'>Status</p>
                         </div>
                         <div>
-                            <Form.Select className='filtercars-select'>
+                            <Form.Select className={props.isInputDisable ? 'filtercars-select-disable':'filtercars-select'}>
                                 <option>-Disewa-</option>
                             </Form.Select>
                         </div>

@@ -9,7 +9,6 @@ import './SearchCarsPage.css'
 
 const SearchCarsPage = () => {
     const [carData,setCarData] = useState([])
-    
     useEffect(() =>{
         axios
             .get("https://bootcamp-rent-cars.herokuapp.com/customer/v2/car")
@@ -21,9 +20,8 @@ const SearchCarsPage = () => {
 
     const handleFilter = (e) => {
         axios
-            .get(`https://bootcamp-rent-cars.herokuapp.com/customer/v2/car?name=${fName}&category=${fCategory}`)
+            .get(`https://bootcamp-rent-cars.herokuapp.com/customer/v2/car?name=${fName}&category=${fCategory}&minPrice=${fMinPrice}&maxPrice=${fMaxPrice}`)
             .then((res) => {
-                console.log(res.data.cars)
                 setCarData(res.data.cars)
             })
             .catch((err) => console.log(err.message));
@@ -39,6 +37,18 @@ const SearchCarsPage = () => {
         setFCategory(e.target.value)
     }
 
+    const [fMinPrice, setFMinPrice] = useState('')
+    const handleMinPrice = (e) => {
+        setFMinPrice(e.target.value)
+    }
+
+    const [fMaxPrice, setFMaxPrice] = useState('')
+    const handleMaxPrice = (e) => {
+        setFMaxPrice(e.target.value)
+    }
+
+    console.log(fMaxPrice)
+
     return(
         <div>
             <NavBar />
@@ -48,6 +58,9 @@ const SearchCarsPage = () => {
                 nameFilter={handleChangeName}
                 categoryFilter={handleChangeCategory}
                 fCategory={fCategory}
+                minPriceFilter={handleMinPrice}
+                maxPriceFilter = {handleMaxPrice}
+                isInputDisable={false}
             />
             <CarsShow allCars={carData} />
             <Footer />

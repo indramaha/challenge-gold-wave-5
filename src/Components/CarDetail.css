@@ -1,0 +1,91 @@
+.cardetail-section {
+    display: flex;
+    margin-top: 100px;
+    gap: 32px;
+    justify-content: center;
+}
+
+.cardetail-desc-bg {
+    padding: 24px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.cardetail-desc-title-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: black;
+}
+
+.cardetail-desc {
+    width: 560px;
+}
+
+.cardetail-desc-title-paket-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: black;
+}
+
+.cardetail-desc-list {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #8A8A8A;
+}
+
+.cardetail-result {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.cardetail-img-bg {
+    padding: 28px 67px;
+}
+
+.cardetail-img {
+    width: 270px;
+}
+
+.cardetail-result-desc {
+    padding: 24px;
+}
+
+.cardetail-result-title-p-bg {
+    margin-bottom: 71px;
+}
+
+.cardetail-result-title-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: black;
+    margin: 0;
+}
+
+.cardetail-result-price-bg {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardetail-result-total-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: black;
+    margin: 0;
+}
+
+.cardetail-result-price-p-bg {
+    margin-bottom: 60px;
+}
+
+.cardetail-result-price-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: black;
+    margin: 0;
+}

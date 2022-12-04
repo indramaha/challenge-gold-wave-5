@@ -11,7 +11,7 @@ const CarsShow = (props) => {
                         return(
                             <div className='carsshow-card' key={i}>
                                 <div>
-                                    <img src={item.image} alt='car' className='carsshow-card-img'/>
+                                    <img src={item.image} alt={item.name} className='carsshow-card-img'/>
                                 </div>
                                 <div>
                                     <p className='carsshow-card-title-p'>{item.name}</p>

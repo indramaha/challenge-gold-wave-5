@@ -4,6 +4,7 @@ import Footer from '../Components/Footer';
 import Hero from '../Components/Hero';
 import Navbar from '../Components/Navbar'
 import CarsShow from '../Components/CarsShow';
+import FilterCars from '../Components/FilterCars';
 
 
 const CarDetailPage = () => {
@@ -81,7 +82,8 @@ const CarDetailPage = () => {
         <div>
             <Navbar />
             <Hero />
-            <CarDetail includeDesc={include} excludeDesc={exclude} />
+            <FilterCars isInputDisable={true}/>
+            <CarDetail includeDesc={include} excludeDesc={exclude} refundDesc={refund}/>
             <Footer />
         </div>
      );
