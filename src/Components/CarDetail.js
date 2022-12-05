@@ -6,6 +6,7 @@ import { Spinner } from 'react-bootstrap'
 import './CarDetail.css'
 
 const CarDetail = (props) => {
+
     const {id} = useParams();
     const [car, setCar] = useState([])
 
@@ -28,9 +29,9 @@ const CarDetail = (props) => {
                     </div>
                     <div>
                         {
-                            props.includeDesc.map((item) => {
+                            props.includeDesc.map((item, i) => {
                                 return(
-                                    <ul>
+                                    <ul key={i}>
                                         <li className="cardetail-desc-list">{item.text}</li>
                                     </ul>
                                 )
@@ -44,9 +45,9 @@ const CarDetail = (props) => {
                     </div>
                     <div>
                         {
-                            props.excludeDesc.map((item) => {
+                            props.excludeDesc.map((item, i) => {
                                 return(
-                                    <ul>
+                                    <ul key={i}>
                                         <li className="cardetail-desc-list">{item.text}</li>
                                     </ul>
                                 )
@@ -60,9 +61,9 @@ const CarDetail = (props) => {
                     </div>
                     <div>
                         {
-                            props.refundDesc.map((item) => {
+                            props.refundDesc.map((item, i) => {
                                 return(
-                                    <ul>
+                                    <ul key={i}>
                                         <li className="cardetail-desc-list">{item.text}</li>
                                     </ul>
                                 )

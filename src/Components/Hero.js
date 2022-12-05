@@ -5,8 +5,8 @@ import './Hero.css'
 const Hero = (props) => {
 
     return(
-        <div className="hero-section">
-            <div className='hero-desc'>
+        <div className={props.isContentShow ? "hero-section" : "hero-section-disable"} >
+            <div className={props.isContentShow ? 'hero-desc' : 'hero-desc-disable'}>
                 <div className='hero-title-bg'>
                     <h1 className='hero-title-h1'>Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)</h1>
                 </div>
@@ -24,7 +24,7 @@ const Hero = (props) => {
                 </div>
             </div>
             <div>
-                <img src={CarImage} alt='hero-car' className='hero-image-img'/>
+                <img src={CarImage} alt='hero-car' className={props.isContentShow ? 'hero-image-img' : 'hero-image-img-disable' }/>
             </div>
         </div>
     )

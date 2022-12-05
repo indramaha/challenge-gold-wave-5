@@ -7,6 +7,13 @@
     margin-bottom: 50px;
 }
 
+.hero-section-disable {
+    height: 260px;
+    padding-top: 38px;
+    background-color: #F1F3FF;
+    margin-bottom: 50px;
+}
+
 .hero-desc {
     display: flex;
     flex-direction: column;
@@ -14,6 +21,10 @@
     margin-bottom: auto;
     width: 550px;
     margin-left: 300px;
+}
+
+.hero-desc-disable {
+    display: none;
 }
 
 .hero-title-bg {
@@ -49,6 +60,10 @@
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
+}
+
+.hero-image-img-disable {
+    display: none;
 }
 
 @media only screen and (max-width:1440px){

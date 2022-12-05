@@ -89,7 +89,7 @@ const LandingPage = () => {
     return(
         <div>
             <NavBar />
-            <Hero isBtnShow={true}/>
+            <Hero isBtnShow={true} isContentShow={true}/>
             <OurServices servicesText={servicesDesc}/>
             <WhyUs whyUsCardText={whyUsCardDesc}/>
             <Testimonial star={ratingTesti}/>

@@ -78,11 +78,45 @@ const CarDetailPage = () => {
             text: 'Tidak termasuk akomodasi penginapan',
         },
     ])
+
+    const [fName, setFName] = useState('')
+    const handleChangeName = (e) => {
+        setFName(e.target.value)
+    }
+
+    const [fCategory, setFCategory] = useState('')
+    const handleChangeCategory = (e) => {
+        setFCategory(e.target.value)
+    }
+
+    const [fMinPrice, setFMinPrice] = useState('')
+    const handleMinPrice = (e) => {
+        setFMinPrice(e.target.value)
+    }
+
+    const [fMaxPrice, setFMaxPrice] = useState('')
+    const handleMaxPrice = (e) => {
+        setFMaxPrice(e.target.value)
+    }
+
+    const [fStatus, setFStatus] = useState('')
+    const handleStatus = (e) => {
+        setFStatus(e.target.value)
+    }
     return ( 
         <div>
             <Navbar />
-            <Hero />
-            <FilterCars isInputDisable={true}/>
+            <Hero isContentShow={false}/>
+            <FilterCars 
+                isInputDisable={true} 
+                isHeroShow={false}
+                isBtnShow={false}
+                fCategory={fCategory}
+                fName={fName}
+                fMinPrice={fMinPrice}
+                fMaxPrice={fMaxPrice}
+                fStatus={fStatus}
+            />
             <CarDetail includeDesc={include} excludeDesc={exclude} refundDesc={refund}/>
             <Footer />
         </div>

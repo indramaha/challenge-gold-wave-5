@@ -20,7 +20,7 @@ const SearchCarsPage = () => {
 
     const handleFilter = (e) => {
         axios
-            .get(`https://bootcamp-rent-cars.herokuapp.com/customer/v2/car?name=${fName}&category=${fCategory}&minPrice=${fMinPrice}&maxPrice=${fMaxPrice}`)
+            .get(`https://bootcamp-rent-cars.herokuapp.com/customer/v2/car?name=${fName}&category=${fCategory}&minPrice=${fMinPrice}&maxPrice=${fMaxPrice}&isRented=${fStatus}`)
             .then((res) => {
                 setCarData(res.data.cars)
             })
@@ -47,20 +47,32 @@ const SearchCarsPage = () => {
         setFMaxPrice(e.target.value)
     }
 
-    console.log(fMaxPrice)
+    const [fStatus, setFStatus] = useState('')
+    const handleStatus = (e) => {
+        setFStatus(e.target.value)
+    }
+
+    // console.log(fName)
 
     return(
         <div>
             <NavBar />
-            <Hero isBtnShow={false}/>
+            <Hero isBtnShow={false} isContentShow={true}/>
             <FilterCars 
                 handleSearchButton={handleFilter} 
                 nameFilter={handleChangeName}
                 categoryFilter={handleChangeCategory}
                 fCategory={fCategory}
+                fName={fName}
+                fMinPrice={fMinPrice}
+                fMaxPrice={fMaxPrice}
+                fStatus={fStatus}
                 minPriceFilter={handleMinPrice}
                 maxPriceFilter = {handleMaxPrice}
+                statusFilter = {handleStatus}
                 isInputDisable={false}
+                isHeroShow={true}
+                isBtnShow={true}
             />
             <CarsShow allCars={carData} />
             <Footer />

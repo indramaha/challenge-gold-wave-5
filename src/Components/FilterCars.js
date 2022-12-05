@@ -1,13 +1,10 @@
-import { Dropdown, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import './FilterCars.css'
 
 const FilterCars = (props) => {
     return ( 
-        <div className='filtercars-section'>
+        <div className={props.isHeroShow ? 'filtercars-section':'filtercars-section-false'}>
             <div className='filtercars-bg'>
-                {/* <div className='filtercars-top'>
-                    <p className='filtercars-top-p'>Pencarianmu</p>
-                </div> */}
                 <div className='filtercars-search-bg'>
                     <div>
                         <div className='filtercars-input-title'>
@@ -44,6 +41,7 @@ const FilterCars = (props) => {
                                     onChange={props.minPriceFilter}
                                     placeholder={props.isInputDisable ? null : 'minimal harga'}
                                     className={props.isInputDisable ? 'filtercars-input-name-disable' : 'filtercars-input-name'}
+                                    type='number'
                                 />
                             </div>
                             <div>
@@ -51,6 +49,7 @@ const FilterCars = (props) => {
                                     onChange={props.maxPriceFilter}
                                     placeholder={props.isInputDisable ? null : 'maksimal harga'}
                                     className={props.isInputDisable ? 'filtercars-input-name-disable' : 'filtercars-input-name'}
+                                    type='number'
                                 />
                             </div>
                             
@@ -61,13 +60,38 @@ const FilterCars = (props) => {
                             <p className='filtercars-input-title-p'>Status</p>
                         </div>
                         <div>
-                            <Form.Select className={props.isInputDisable ? 'filtercars-select-disable':'filtercars-select'}>
-                                <option>-Disewa-</option>
+                            <Form.Select onChange={props.statusFilter} className={props.isInputDisable ? 'filtercars-select-disable':'filtercars-select'}>
+                                <option value={''} >Status</option>
+                                <option value={false}>Tersedia</option>
+                                <option value={true}>Disewa</option>
                             </Form.Select>
                         </div>
                     </div>
                     <div className='filtercars-seacrh-button-bg'>
-                        <button onClick={props.handleSearchButton} className='filtercars-seacrh-button'>Cari Mobil</button>
+                        <div>
+                            {(() => {
+                                if ((props.fName.length === 0) && (props.fCategory.length === 0) && (props.fMinPrice.length === 0) && (props.fMaxPrice.length === 0) && (props.fStatus.length === 0) ) {
+                                return (
+                                    <button 
+                                        onClick={props.handleSearchButton}
+                                        
+                                        className='filtercars-seacrh-button'
+                                    >
+                                        Cari Mobil
+                                    </button>
+                                )
+                                } else {
+                                return (
+                                    <button 
+                                        onClick={props.handleSearchButton}
+                                        className='filtercars-seacrh-button-edit'
+                                    >
+                                        Edit
+                                    </button>
+                                )
+                                }
+                            })()}
+                        </div>
                     </div>
                 </div>
             </div>
