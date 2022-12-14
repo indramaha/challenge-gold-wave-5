@@ -1,3 +1,4 @@
+import CurrencyFormat from 'react-currency-format'
 import { Spinner } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './CarsShow.css'
@@ -17,7 +18,7 @@ const CarsShow = (props) => {
                                     <p className='carsshow-card-title-p'>{item.name}</p>
                                 </div>
                                 <div>
-                                    <p className='carsshow-card-price-p'>Rp.{item.price} /hari</p>
+                                    <p className='carsshow-card-price-p'><CurrencyFormat value={item.price} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={'Rp '} suffix={' /hari'}/></p>
                                 </div>
                                 <div>
                                     <p className='carsshow-card-desc-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>

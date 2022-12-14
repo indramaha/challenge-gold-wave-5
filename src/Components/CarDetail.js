@@ -1,3 +1,4 @@
+import CurrencyFormat from "react-currency-format";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -88,7 +89,7 @@ const CarDetail = (props) => {
                                         <p className="cardetail-result-total-p">Total</p>
                                     </div>
                                     <div className="cardetail-result-price-p-bg">
-                                        <p className="cardetail-result-price-p">Rp.{car.price}</p>
+                                        <p className="cardetail-result-price-p"><CurrencyFormat value={car.price} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} prefix={'Rp '} suffix={' /hari'}/></p>
                                     </div>
                                 </div>
                             </div>

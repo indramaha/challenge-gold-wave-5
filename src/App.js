@@ -3,6 +3,7 @@ import './App.css';
 import SearchCarsPage from './Pages/SearchCarsPage';
 import {Routes, Route} from 'react-router-dom';
 import CarDetailPage from './Pages/CarDetailPage';
+import PaymentMethod from './Pages/PaymentMethod';
 
 const App = () => {
   return(
@@ -11,6 +12,7 @@ const App = () => {
         <Route path='/' element={<LandingPage />} />
         <Route path='/searchcar' element={<SearchCarsPage />} />
         <Route path='/cardetail/:id' element={<CarDetailPage />} />
+        <Route path='/payment-method' element={<PaymentMethod />} />
       </Routes>
     </div>
     
