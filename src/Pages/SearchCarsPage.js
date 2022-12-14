@@ -5,7 +5,6 @@ import Footer from '../Components/Footer';
 import Hero from '../Components/Hero';
 import NavBar from '../Components/Navbar';
 import CarsShow from '../Components/CarsShow';
-import './SearchCarsPage.css'
 
 const SearchCarsPage = () => {
     const [carData,setCarData] = useState([])
