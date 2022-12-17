@@ -7,6 +7,10 @@ const PaymentPage = () => {
             {/* tempat componen bagus start */}
 
             {/* tempat componen bagus end */}
+
+            {/* tempat componen mas andre start */}
+
+            {/* tempat componen mas andre end */}
         </div>
     );
 }
