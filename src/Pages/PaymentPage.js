@@ -1,6 +1,6 @@
 import NavBar from "../Components/Navbar";
 
-const PaymentMethod = () => {
+const PaymentPage = () => {
     return ( 
         <div>
             <NavBar />
@@ -8,4 +8,4 @@ const PaymentMethod = () => {
     );
 }
 
-export default PaymentMethod;
+export default PaymentPage;
