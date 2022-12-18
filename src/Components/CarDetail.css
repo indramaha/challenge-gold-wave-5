@@ -117,3 +117,9 @@
     color: black;
     margin: 0;
 }
+
+.carsshow-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
