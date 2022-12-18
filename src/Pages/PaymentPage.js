@@ -1,5 +1,6 @@
 import HeroPayment from "../Components/HeroPayment";
 import NavBar from "../Components/Navbar";
+import PaymentMethod from "../Components/PaymentMethod";
 
 const PaymentPage = () => {
     return ( 
@@ -7,7 +8,7 @@ const PaymentPage = () => {
             <NavBar />
             <HeroPayment />
             {/* tempat componen bagus start */}
-
+            <PaymentMethod />
             {/* tempat componen bagus end */}
 
             {/* tempat componen mas andre start */}
