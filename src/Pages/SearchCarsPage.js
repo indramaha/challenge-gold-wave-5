@@ -8,6 +8,7 @@ import CarsShow from '../Components/CarsShow';
 
 const SearchCarsPage = () => {
     const [carData,setCarData] = useState([])
+    
     useEffect(() =>{
         axios
             .get("https://bootcamp-rent-cars.herokuapp.com/customer/v2/car")
