@@ -4,7 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 
 const PaymentMethod = () => {
     return (  
-        <div >
+        <div>
             <div className="paymentmethod-paymentdetail">
                 <div>
                     <p className='paymentmethod-paymentdetail-title-p'>Detail Pesananmu</p>
