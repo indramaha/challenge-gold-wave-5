@@ -143,47 +143,49 @@ const CarDetail = (props) => {
                 {
                     Object.entries(car).length ? (
                         <div className="cardetail-result">
-                            <div className="cardetail-img-bg">
-                                <img src={car.image} alt={car.name} className='cardetail-img'/>
-                            </div>
-                            <div className="cardetail-result-desc">
-                                <div className="cardetail-result-title-p-bg">
-                                    <p className="cardetail-result-title-p">{car.name}</p>
-                                </div>
-                                <div className="cardetail-result-date-input">
-                                    <p>Tentukan lama sewa mobil (max 7 hari)</p>
-                                    <DatePicker
-                                        selectsRange={true}
-                                        startDate={startDate}
-                                        endDate={endDate}
-                                        minDate={new Date()}
-                                        onChange = {(update)=>{
-                                            setDateRange(update);
-                                        }}
-                                        dateFormat="dd MMMM yyyy"
-                                        isClearable={true}
-                                        placeholderText="Pilih tanggal mulai dan tanggal akhir sewa"
-                                        showDisableMonthNavigation
-                                    />
-                                  
-                                <div className='cardetail-category'>
-                                    <Category />
-                                </div>
-                                <div className="cardetail-result-price-bg">
-                                    <div>
-                                        <p className="cardetail-result-total-p">Total</p>
-                                    </div>
-                                    <div className="cardetail-result-price-p-bg">
-                                        <p className="cardetail-result-price-p">Rp <PriceTotal/></p>
-                                    </div>
-                                </div>
-                                <button className="cardetail-result-button">Lanjutkan Pembayaran</button>
-                            </div>
+                        <div className="cardetail-img-bg">
+                            <img src={car.image} alt={car.name} className='cardetail-img'/>
                         </div>
+                        <div className="cardetail-result-desc">
+                            <div className="cardetail-result-title-p-bg">
+                                <p className="cardetail-result-title-p">{car.name}</p>
+                            </div>
+                            <div className="cardetail-result-date-input">
+                                <p>Tentukan lama sewa mobil (max 7 hari)</p>
+                                <DatePicker
+                                    selectsRange={true}
+                                    startDate={startDate}
+                                    endDate={endDate}
+                                    minDate={new Date()}
+                                    onChange = {(update)=>{
+                                        setDateRange(update);
+                                    }}
+                                    dateFormat="dd MMMM yyyy"
+                                    isClearable={true}
+                                    placeholderText="Pilih tanggal mulai dan tanggal akhir sewa"
+                                    showDisableMonthNavigation
+                                />
+                              
+                            <div className='cardetail-category'>
+                                <Category />
+                            </div>
+                            <div className="cardetail-result-price-bg">
+                                <div>
+                                    <p className="cardetail-result-total-p">Total</p>
+                                </div>
+                                <div className="cardetail-result-price-p-bg">
+                                    <p className="cardetail-result-price-p">Rp <PriceTotal/></p>
+                                </div>
+                            </div>
+                            <button className="cardetail-result-button">Lanjutkan Pembayaran</button>
+                        </div>
+                        </div>
+                    </div>
                     ):(<div className='carsshow-loading'><Spinner animation='grow' variant='primary'/></div>)
                 }
             </div>
         </div>
+        
     );
 }
 
