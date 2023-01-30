@@ -18,7 +18,7 @@
     position: absolute;
     top: 270px;
     background-color: white;
-    left: 320px;
+    left: 355px;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -27,6 +27,35 @@
 }
 
 .filtercars-bg {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.filtercars-bg:hover {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    box-shadow: 0px 0px 0px 10000px rgba(0, 0, 0, 0.6);
+    transition: box-shadow 0.5s;
+    -webkit-transition: box-shadow 0.5s;
+    -moz-transition: box-shadow 0.5s;
+    -ms-transition: box-shadow 0.5s;
+    -o-transition: box-shadow 0.5s;
+}
+
+.filtercars-bg-false {
     display: flex;
     flex-direction: column;
     padding: 24px;
@@ -163,6 +192,10 @@
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
+}
+
+.filtercars-seacrh-button-false {
+    display: none;
 }
 
 .filtercars-seacrh-button-edit {

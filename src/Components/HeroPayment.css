@@ -1,0 +1,77 @@
+h1, h2, h3, h4, h5, h6, a, ul, li, p {
+    margin: 0 !important;
+}
+
+.heropayment-section {
+    display: flex;
+    justify-content: space-around;
+    background-color: #F1F3FF;
+    padding-top: 70px;
+    padding-bottom: 110px ;
+}
+
+.heropayment-left {
+    display: flex;
+    align-items: center;
+}
+
+.heropayment-left-text-bg {
+    margin-left: 16px;
+}
+
+.heropayment-left-text-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.heropayment-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.heropayment-right-content {
+    display: flex;
+}
+
+.heropayment-right-content-number-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #0D28A6;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.heropayment-right-content-number-p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.heropayment-right-content-text-bg {
+    margin-left: 8px;
+}
+
+.heropayment-right-content-text-p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.heropayment-rectangle-bg {
+    display: flex;
+    justify-content: center;
+}
+
+.heropayment-rectangle {
+    background-color: #0D28A6;
+    width: 28px;
+    height: 1px;
+}
