@@ -3,6 +3,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Spinner } from 'react-bootstrap'
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css";
+
 
 import './CarDetail.css'
 
@@ -18,7 +21,24 @@ const CarDetail = (props) => {
                 setCar(res.data)
             })
             .catch((err) => console.log(err.message))
-    },[])
+    },[id])
+
+    const [dateRange, setDateRange] = useState([null,null]);
+    const [startDate,endDate] = dateRange;
+
+
+    function PriceTotal(){
+        const isPrice = car.price
+        const dateCount = Math.round((endDate - startDate) / (1000 * 60 * 60 * 24))
+        const totalPrice = isPrice * (dateCount+1)
+        if ((dateCount >= 0) && (dateCount < 7)) {
+            return convertToRupiah(totalPrice)
+        } else if (dateCount < 0) {
+            return 0
+        } else {
+            return "- (Lebih dari 7 hari)"
+        }
+    }
 
     return ( 
         <div className="cardetail-section">
@@ -84,14 +104,32 @@ const CarDetail = (props) => {
                                 <div className="cardetail-result-title-p-bg">
                                     <p className="cardetail-result-title-p">{car.name}</p>
                                 </div>
+                                <div className="cardetail-result-date-input">
+                                    <p>Tentukan lama sewa mobil (max 7 hari)</p>
+                                    <DatePicker
+                                        selectsRange={true}
+                                        startDate={startDate}
+                                        endDate={endDate}
+                                        minDate={new Date()}
+                                        onChange = {(update)=>{
+                                            setDateRange(update);
+                                        }}
+                                        dateFormat="dd MMMM yyyy"
+                                        isClearable={true}
+                                        placeholderText="Pilih tanggal mulai dan tanggal akhir sewa"
+                                        showDisableMonthNavigation
+                                    />
+                                  
+                                </div>
                                 <div className="cardetail-result-price-bg">
                                     <div>
                                         <p className="cardetail-result-total-p">Total</p>
                                     </div>
                                     <div className="cardetail-result-price-p-bg">
-                                        <p className="cardetail-result-price-p">Rp {convertToRupiah(car.price)} /hari</p>
+                                        <p className="cardetail-result-price-p">Rp <PriceTotal/></p>
                                     </div>
                                 </div>
+                                <button className="cardetail-result-button">Lanjutkan Pembayaran</button>
                             </div>
                         </div>
                     ):(<div className='carsshow-loading'><Spinner animation='grow' variant='primary'/></div>)
