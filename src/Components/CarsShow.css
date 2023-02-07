@@ -24,7 +24,13 @@
 }
 
 .carsshow-card-img {
-    width: 100%;
+    width: 270px !important;
+    height: 160px !important;
+    object-fit: contain;
+}
+
+.carsshow-card-title {
+    margin-top: 16px;
 }
 
 .carsshow-card-title-p {
@@ -33,16 +39,28 @@
     line-height: 20px;
 }
 
+.carsshow-card-price {
+    margin-top: 8px;
+}
+
 .carsshow-card-price-p {
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
 }
 
+.carsshow-card-desc {
+    margin-top: 8px;
+}
+
 .carsshow-card-desc-p {
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
+}
+
+.carsshow-card-button-bg {
+    margin-top: 24px;
 }
 
 .carsshow-card-button {

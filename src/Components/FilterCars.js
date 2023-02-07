@@ -4,7 +4,7 @@ import './FilterCars.css'
 const FilterCars = (props) => {
     return ( 
         <div className={props.isHeroShow ? 'filtercars-section':'filtercars-section-false'}>
-            <div className='filtercars-bg'>
+            <div className={props.isHeroShow ? 'filtercars-bg':'filtercars-bg-false'}>
                 <div className='filtercars-search-bg'>
                     <div>
                         <div className='filtercars-input-title'>
@@ -75,7 +75,7 @@ const FilterCars = (props) => {
                                     <button 
                                         onClick={props.handleSearchButton}
                                         
-                                        className='filtercars-seacrh-button'
+                                        className={props.isHeroShow ? 'filtercars-seacrh-button':'filtercars-seacrh-button-false'}
                                     >
                                         Cari Mobil
                                     </button>

@@ -33,6 +33,9 @@ const NavBar = () =>{
                       <Nav.Link href="#whyus" className='navbar-item-link'>Why Us</Nav.Link>
                       <Nav.Link href="#testimonial" className='navbar-item-link'>Testimonial</Nav.Link>
                       <Nav.Link href="#faq" className='navbar-item-link'>FAQ</Nav.Link>
+                      <Link to='/SigninPage'>
+                        <button className='hero-button'>Register</button>
+                      </Link>
                     </Nav>
                   </Offcanvas.Body>
                 </Navbar.Offcanvas>

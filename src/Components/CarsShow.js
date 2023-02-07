@@ -14,16 +14,16 @@ const CarsShow = (props) => {
                                 <div>
                                     <img src={item.image} alt={item.name} className='carsshow-card-img'/>
                                 </div>
-                                <div>
+                                <div className='carsshow-card-title'>
                                     <p className='carsshow-card-title-p'>{item.name}</p>
                                 </div>
-                                <div>
+                                <div className='carsshow-card-price'>
                                     <p className='carsshow-card-price-p'>Rp {convertToRupiah(item.price)} /hari</p>
                                 </div>
-                                <div>
+                                <div className='carsshow-card-desc'>
                                     <p className='carsshow-card-desc-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                                 </div>
-                                <div>
+                                <div className='carsshow-card-button-bg'>
                                     <Link to={`/cardetail/${item.id}`}>
                                         <button className='carsshow-card-button'>Pilih Mobil</button>
                                     </Link>

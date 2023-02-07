@@ -1,0 +1,54 @@
+.signin{
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup{
+    display: flex;
+    justify-content: space-between;
+}
+
+.right{
+    padding-top: 20rem;
+    padding-left: 20rem;
+}
+
+.right2{
+    padding-top: 12rem;
+    padding-left: 20rem;
+}
+
+.signin h2{
+    padding: 1.5rem;
+    padding-left: 0;
+}
+
+.right button{
+    border: none;
+    width: 80px;
+    height: 30px;
+}
+
+.right2 button{
+    border: none;
+    width: 80px;
+    height: 30px;
+}
+
+.butn button{
+    background-color: blue;
+    color: white;
+    width: 16rem;
+}
+
+.ask{
+    display: flex;
+    gap: 1rem;
+    padding-top: 2rem;
+    font-size: 12px;
+    padding-left: 1rem;
+}
+
+.ask a{
+    text-decoration: underline;
+}
