@@ -7,6 +7,7 @@ import PaymentPage from './Pages/PaymentPage';
 import SigninPage from './Pages/SigninPage';
 import SignupPage from './Pages/SignupPage';
 
+
 const App = () => {
   return(
     <div className='app'>
