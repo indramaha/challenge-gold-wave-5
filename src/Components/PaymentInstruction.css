@@ -132,14 +132,14 @@
 
 }
 
-.Confirmation-Pay,p {
+.Confirmation-Pay p {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
     font-size: 11px;
     line-height: 20px;
     color: #000000;
-    text-align: center;
+    text-align: center; 
 }
 
 .confirmationButton {
