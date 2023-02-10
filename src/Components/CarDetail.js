@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { Spinner } from 'react-bootstrap'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
-
+import {Link} from "react-router-dom";
 import {FiUsers} from 'react-icons/fi'
 
 import './CarDetail.css'
@@ -26,6 +26,13 @@ const CarDetail = (props) => {
 
     const [dateRange, setDateRange] = useState([null,null]);
     const [startDate,endDate] = dateRange;
+    console.log(startDate)
+    console.log(endDate)
+
+    const handleButtonLP = () =>{
+        localStorage.setItem("start",startDate)
+        localStorage.setItem("end",endDate)
+    }
 
 
     function PriceTotal(){
@@ -44,7 +51,7 @@ const CarDetail = (props) => {
 
     function Category() {
         const isCategory = car.category;
-        console.log(isCategory)
+        // console.log(isCategory)
         if (isCategory == "small") {
             return(
                 <div className='cardetail-category-bg'>
@@ -83,6 +90,23 @@ const CarDetail = (props) => {
                 <p>ERROR...</p>
             )
         }
+    }
+
+    function ButtonLP(){
+        if(startDate !== null && endDate !== null){
+            return(
+            <Link to={`/payment/${car.id}`}>
+            <button onClick={handleButtonLP} className="cardetail-result-button">Lanjutkan Pembayaran</button>
+            </Link>
+            )
+            
+        }else{
+            return(
+            <button className="cardetail-result-button">pilih tanggal</button>
+            )
+            
+        }
+
     }
 
 
@@ -150,6 +174,9 @@ const CarDetail = (props) => {
                             <div className="cardetail-result-title-p-bg">
                                 <p className="cardetail-result-title-p">{car.name}</p>
                             </div>
+                            <div className='cardetail-category'>
+                                <Category />
+                            </div>
                             <div className="cardetail-result-date-input">
                                 <p>Tentukan lama sewa mobil (max 7 hari)</p>
                                 <DatePicker
@@ -165,10 +192,7 @@ const CarDetail = (props) => {
                                     placeholderText="Pilih tanggal mulai dan tanggal akhir sewa"
                                     showDisableMonthNavigation
                                 />
-                            
-                            <div className='cardetail-category'>
-                                <Category />
-                            </div>
+                        
                             <div className="cardetail-result-price-bg">
                                 <div>
                                     <p className="cardetail-result-total-p">Total</p>
@@ -177,7 +201,8 @@ const CarDetail = (props) => {
                                     <p className="cardetail-result-price-p">Rp <PriceTotal/></p>
                                 </div>
                             </div>
-                            <button className="cardetail-result-button">Lanjutkan Pembayaran</button>
+                            <ButtonLP />
+                            
                         </div>
                         </div>
                     </div>
