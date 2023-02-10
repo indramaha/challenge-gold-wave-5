@@ -1,22 +1,22 @@
 import Footer from "../Components/Footer";
 import HeroPayment from "../Components/HeroPayment";
 import NavBar from "../Components/Navbar";
-import PaymentMethod from "../Components/PaymentMethod";
+import PaymentIns from "../Components/PaymentInstruction";
 
-const PaymentPage = () => {
+
+const PaymentInsPage = () => {
     return ( 
         <div>
             <NavBar />
             <HeroPayment />
             {/* tempat componen bagus start */}
-            <PaymentMethod />
-            {/* tempat componen bagus end */}
+            
+            <PaymentIns />
 
-
-        
+            {/* tempat componen mas andre end */}
             <Footer />
         </div>
     );
 }
 
-export default PaymentPage;
+export default PaymentInsPage

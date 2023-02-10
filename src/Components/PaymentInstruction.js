@@ -6,11 +6,11 @@ const PaymentIns = () => {
         <div className="PaymentIns-Home">
             <div className="Instruction-Content">
                 <div className="countdown">
-                    <h3>Selesaikan Pembayaran</h3>
+                    <h3 className="countdownH3">Selesaikan Pembayaran</h3>
                     <div className="batasWaktu">Rabu, 19 Mei 2022 jam 13.00 WIB </div>
                 </div>
                 <div className="BankAcc">
-                    <h3>Lakukan Transfer Ke</h3>
+                    <h3 className="BankAccH3">Lakukan Transfer Ke</h3>
                     <div className="BankDetail">
                         Nomor Rekening
                         <input placeholder="Nomor Rekening"/>
@@ -19,7 +19,7 @@ const PaymentIns = () => {
                     </div>    
                 </div>
                 <div className="PaymentMetod">
-                    <h3>Instruksi Pembayaran</h3>
+                    <h3 className="PaymentMetodH3">Instruksi Pembayaran</h3>
                     <div className="BankTutor">
                         <h4>ATM BCA</h4>
                         <h4>MBCA</h4>
