@@ -165,7 +165,7 @@ const CarDetail = (props) => {
                                     placeholderText="Pilih tanggal mulai dan tanggal akhir sewa"
                                     showDisableMonthNavigation
                                 />
-                              
+                            
                             <div className='cardetail-category'>
                                 <Category />
                             </div>
