@@ -1,11 +1,14 @@
-
+.paymentmethod-paymentdetail-bg {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 200px;
+}
 
 .paymentmethod-paymentdetail {
     width: 1040px;
     background-color: white;
-    position: absolute;
-    top: 210px;
-    left: 430px;
     padding: 24px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
@@ -15,6 +18,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 20px;
+    color: black;
 }
 
 .paymentmethod-paymentdetail-desc-bg {
@@ -23,17 +27,22 @@
     margin-top: 8px;
 }
 
+.paymentmethod-paymentdetail-input-bg {
+    width: 100%;
+}
+
 .paymentmethod-paymentdetail-desc-title-p {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
+    color: black;
 }
 
 .paymentmethod-paymentdetail-desc-content {
     margin-top: 8px;
 }
 
-.paymentmethod-paymentdetail-desc-content-p {
+.paymentmethod-paymentdetail-desc-content p {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -308,30 +317,4 @@
     color: white;
     background-color: #5CB85F;
     border-radius: 2px;
-}
-
-@media only screen and (max-width: 1440px) {
-    .paymentmethod-paymentdetail {
-        width: 1040px;
-        background-color: white;
-        position: absolute;
-        top: 210px;
-        left: 200px;
-        padding: 24px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-        border-radius: 8px;
-    }
-}
-
-@media only screen and (max-width: 1280px) {
-    .paymentmethod-paymentdetail {
-        width: 1040px;
-        background-color: white;
-        position: absolute;
-        top: 210px;
-        left: 120px;
-        padding: 24px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-        border-radius: 8px;
-    }
 }

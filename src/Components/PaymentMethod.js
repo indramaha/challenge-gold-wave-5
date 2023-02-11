@@ -1,45 +1,93 @@
 import './PaymentMethod.css'
 import {FiCheck, FiUsers} from 'react-icons/fi'
 import Accordion from 'react-bootstrap/Accordion';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import 'moment/locale/id'
+import moment from "moment/moment";
 
 const PaymentMethod = () => {
+    const [car, setCar] = useState({})
+    const {id} = useParams()
+    const startDate = moment(localStorage.getItem("start"))
+    const endDate = moment(localStorage.getItem("end"))
+
+    useEffect(() => {
+        getDetailCar()
+        // eslint-disable-next-line
+    },[])
+
+    const getDetailCar = () => {
+        axios
+            .get(`https://bootcamp-rent-cars.herokuapp.com/customer/car/${id}`)
+            .then((res) => {
+                // console.log(res.data)
+                setCar(res.data)
+            })
+            .catch((err) => {
+                console.log(err.message)
+            })
+    }
+
+
     return (  
         <div>
-            <div className="paymentmethod-paymentdetail">
-                <div>
-                    <p className='paymentmethod-paymentdetail-title-p'>Detail Pesananmu</p>
-                </div>
-                <div className='paymentmethod-paymentdetail-desc-bg'>
+            <div className='paymentmethod-paymentdetail-bg'>
+                <div className="paymentmethod-paymentdetail">
                     <div>
-                        <div>
-                            <p className='paymentmethod-paymentdetail-desc-title-p'>Nama/Tipe Mobil</p>
-                        </div>
-                        <div className='paymentmethod-paymentdetail-desc-content'>
-                            <p className='paymentmethod-paymentdetail-desc-content-p'>Innova</p>
-                        </div>
+                        <p className='paymentmethod-paymentdetail-title-p'>Detail Pesananmu</p>
                     </div>
-                    <div>
-                        <div>
-                            <p className='paymentmethod-paymentdetail-desc-title-p'>Kategori</p>
+                    <div className='paymentmethod-paymentdetail-desc-bg'>
+                        <div className='paymentmethod-paymentdetail-input-bg'>
+                            <div>
+                                <p className='paymentmethod-paymentdetail-desc-title-p'>Nama/Tipe Mobil</p>
+                            </div>
+                            <div className='paymentmethod-paymentdetail-desc-content'>
+                                <p>{car.name}</p>
+                            </div>
                         </div>
-                        <div className='paymentmethod-paymentdetail-desc-content'>
-                            <p className='paymentmethod-paymentdetail-desc-content-p'>6 - 8 orang</p>
+                        <div className='paymentmethod-paymentdetail-input-bg'>
+                            <div>
+                                <p className='paymentmethod-paymentdetail-desc-title-p'>Kategori</p>
+                            </div>
+                            <div className='paymentmethod-paymentdetail-desc-content'>
+                                {(() => {
+                                    if (car.category === "small"){
+                                        return(
+                                            <p>2 - 4 orang</p>
+                                        )
+                                    } else if (car.category === "Medium"){
+                                        return(
+                                            <p>4 - 6 orang</p>
+                                        )
+                                    } else if (car.category === "large"){
+                                        return(
+                                            <p>6 - 8 orang</p>
+                                        )
+                                    } else {
+                                        return(
+                                            <p> - </p>
+                                        )
+                                    }
+                                })()}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div>
-                            <p className='paymentmethod-paymentdetail-desc-title-p'>Tanggal Mulai Sewa</p>
+                        <div className='paymentmethod-paymentdetail-input-bg'>
+                            <div>
+                                <p className='paymentmethod-paymentdetail-desc-title-p'>Tanggal Mulai Sewa</p>
+                            </div>
+                            <div className='paymentmethod-paymentdetail-desc-content'>
+                                <p>{startDate.format('LL')}</p>
+                            </div>
                         </div>
-                        <div className='paymentmethod-paymentdetail-desc-content'>
-                            <p className='paymentmethod-paymentdetail-desc-content-p'>2 Jun 2022</p>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <p className='paymentmethod-paymentdetail-desc-title-p'>Tanggal Akhir Sewa</p>
-                        </div>
-                        <div className='paymentmethod-paymentdetail-desc-content'>
-                            <p className='paymentmethod-paymentdetail-desc-content-p'>8 Jun 2022</p>
+                        <div className='paymentmethod-paymentdetail-input-bg'>
+                            <div>
+                                <p className='paymentmethod-paymentdetail-desc-title-p'>Tanggal Akhir Sewa</p>
+                            </div>
+                            <div className='paymentmethod-paymentdetail-desc-content'>
+                                <p>{endDate.format('LL')}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,14 +142,34 @@ const PaymentMethod = () => {
                 <div className='paymentmethod-next'>
                     <div>
                         <div>
-                            <p className='paymentmethod-next-carname-p'>(Nama mobil)</p>
+                            <p className='paymentmethod-next-carname-p'>{car.name}</p>
                         </div>
                         <div className='paymentmethod-next-category-bg'>
                             <div>
                                 <FiUsers size={12}/>
                             </div>
                             <div >
-                                <p className='paymentmethod-next-category-p'>(Katerogi)</p>
+                                <p className='paymentmethod-next-category-p'>
+                                    {(() => {
+                                        if (car.category === "small"){
+                                            return(
+                                                "2 - 4 orang"
+                                            )
+                                        } else if (car.category === "Medium"){
+                                            return(
+                                                "4 - 6 orang"
+                                            )
+                                        } else if (car.category === "large"){
+                                            return(
+                                                "6 - 8 orang"
+                                            )
+                                        } else {
+                                            return(
+                                                " - "
+                                            )
+                                        }
+                                    })()}
+                                </p>
                             </div>
                         </div>
                     </div>
