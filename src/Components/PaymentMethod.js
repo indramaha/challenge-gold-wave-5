@@ -2,16 +2,22 @@ import './PaymentMethod.css'
 import {FiCheck, FiUsers} from 'react-icons/fi'
 import Accordion from 'react-bootstrap/Accordion';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import 'moment/locale/id'
 import moment from "moment/moment";
+import { convertToRupiah } from '../utils/function';
+import { API } from '../hoc/const';
 
 const PaymentMethod = () => {
     const [car, setCar] = useState({})
     const {id} = useParams()
     const startDate = moment(localStorage.getItem("start"))
     const endDate = moment(localStorage.getItem("end"))
+    const [bca, setBca] = useState(false)
+    const [bni, setBni] = useState(false)
+    const [mandiri, setMandiri] = useState(false)
+    const navigate = useNavigate()
 
     useEffect(() => {
         getDetailCar()
@@ -30,6 +36,71 @@ const PaymentMethod = () => {
             })
     }
 
+    const handleBcaMethode = () => {
+        setBca(true)
+        setBni(false)
+        setMandiri(false)
+        localStorage.setItem("bank", "bca")
+    }
+
+    const handleBniMethode = () => {
+        setBca(false)
+        setBni(true)
+        setMandiri(false)
+        localStorage.setItem("bank", "bni")
+    }
+
+    const handleMandiriMethode = () => {
+        setBca(false)
+        setBni(false)
+        setMandiri(true)
+        localStorage.setItem("bank", "mandiri")
+    }
+
+    const isPrice = car.price
+    const dateCount = (Math.round((endDate - startDate) / (1000 * 60 * 60 * 24))) +1
+    const totalPrice = isPrice * (dateCount)
+
+    const PriceTotal = () => {
+        if ((dateCount >= 0) && (dateCount < 7)) {
+            return convertToRupiah(totalPrice)
+        } else if (dateCount < 0) {
+            return 0
+        } else {
+            return "- (Lebih dari 7 hari)"
+        }
+    }
+    const start = localStorage.getItem("start")
+    const end = localStorage.getItem("end")
+
+    const startNew = moment(start).format('YYYY-MM-DD')
+    const endNew = moment(end).format('YYYY-MM-DD')
+
+    const handleNewOrder = () => {
+        const token = localStorage.getItem("token")
+        const config = {
+            headers: {
+                access_token: token
+            }
+        }
+
+        const payload = {
+            "start_rent_at": startNew,
+            "finish_rent_at": endNew,
+            "car_id": id
+        }
+
+        axios
+            .post(API.CUSTOMER_OREDER, payload, config)
+            .then((res) => {
+                // console.log(res.data.id)
+                navigate(`/paymentIns/${res.data.id}`)
+                localStorage.setItem("CarId", res.data.CarId)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
 
     return (  
         <div>
@@ -78,7 +149,7 @@ const PaymentMethod = () => {
                                 <p className='paymentmethod-paymentdetail-desc-title-p'>Tanggal Mulai Sewa</p>
                             </div>
                             <div className='paymentmethod-paymentdetail-desc-content'>
-                                <p>{startDate.format('LL')}</p>
+                                <p>{startDate.format('YYYY-MM-DD')}</p>
                             </div>
                         </div>
                         <div className='paymentmethod-paymentdetail-input-bg'>
@@ -101,40 +172,55 @@ const PaymentMethod = () => {
                         <p className='paymentmethod-bank-desc-p'>Kamu bisa membayar dengan transfer melalui ATM, Internet Banking atau Mobile Banking</p>
                     </div>
                     <div className='paymentmethod-bank-option-bg'>
-                        <div className='paymentmethod-bank-option'>
+                        <div className='paymentmethod-bank-option' onClick={handleBcaMethode}>
                             <div className='paymentmethod-bank-option-bank-logo'>
                                 <p className='paymentmethod-bank-option-bank-p'>BCA</p>
                             </div>
                             <div className='paymentmethod-bank-option-desc'>
                                 <p className='paymentmethod-bank-option-p'>BCA Transfer</p>
                             </div>
-                            <div className='paymentmethod-bank-option-check-bg'>
-                                <FiCheck size={24} className='paymentmethod-bank-option-check'/>
-                            </div>
+                            {
+                                bca === true ? (
+                                    <div className='paymentmethod-bank-option-check-bca'>
+                                        <FiCheck size={24} className='paymentmethod-bank-option-check'/>
+                                    </div>
+                                ):(null)
+                            }
+                            
                         </div>
                         <hr className='paymentmethod-bank-hr'/>
-                        <div className='paymentmethod-bank-option'>
+                        <div className='paymentmethod-bank-option' onClick={handleBniMethode}>
                             <div className='paymentmethod-bank-option-bank-logo'>
                                 <p className='paymentmethod-bank-option-bank-p'>BNI</p>
                             </div>
                             <div className='paymentmethod-bank-option-desc'>
                                 <p className='paymentmethod-bank-option-p'>BNI Transfer</p>
                             </div>
-                            <div className='paymentmethod-bank-option-check-bg'>
-                                <FiCheck size={24} className='paymentmethod-bank-option-check'/>
-                            </div>
+                            {
+                                bni === true ? (
+                                    <div className='paymentmethod-bank-option-check-bni'>
+                                        <FiCheck size={24} className='paymentmethod-bank-option-check'/>
+                                    </div>
+                                ):(null)
+                            }
+                            
                         </div>
                         <hr className='paymentmethod-bank-hr'/>
-                        <div className='paymentmethod-bank-option'>
+                        <div className='paymentmethod-bank-option' onClick={handleMandiriMethode}>
                             <div className='paymentmethod-bank-option-bank-logo'>
                                 <p className='paymentmethod-bank-option-bank-p'>Mandiri</p>
                             </div>
                             <div className='paymentmethod-bank-option-desc'>
                                 <p className='paymentmethod-bank-option-p'>Mandiri Transfer</p>
                             </div>
-                            <div className='paymentmethod-bank-option-check-bg'>
-                                <FiCheck size={24} className='paymentmethod-bank-option-check'/>
-                            </div>
+                            {
+                                mandiri === true ? (
+                                    <div className='paymentmethod-bank-option-check-mandiri'>
+                                        <FiCheck size={24} className='paymentmethod-bank-option-check'/>
+                                    </div>
+                                ):(null)
+                            }
+                            
                         </div>
                         <hr className='paymentmethod-bank-hr'/>
                     </div>
@@ -182,7 +268,7 @@ const PaymentMethod = () => {
                                             <p className='paymentmethod-next-accord-total-p'>Total</p>
                                         </div>
                                         <div className='paymentmethod-next-accord-title-price'>
-                                            <p className='paymentmethod-next-accord-title-price-p'>Rp3.500.000</p>
+                                            <p className='paymentmethod-next-accord-title-price-p'>Rp. <PriceTotal /></p>
                                         </div>
                                     </div>
                                 </Accordion.Header>
@@ -195,11 +281,11 @@ const PaymentMethod = () => {
                                             <div className='paymentmethod-next-accord-body-price-desc'>
                                                 <div>
                                                     <ul>
-                                                        <li className='paymentmethod-next-accord-body-price-li'>Sewa Mobil Rp.500.000 x 7 Hari</li>
+                                                        <li className='paymentmethod-next-accord-body-price-li'>Sewa Mobil Rp.{(car.price)}  x {dateCount} Hari</li>
                                                     </ul>
                                                 </div>
                                                 <div>
-                                                    <p className='paymentmethod-next-accord-body-price-p'>Rp 3.500.000</p>
+                                                    <p className='paymentmethod-next-accord-body-price-p'>Rp. <PriceTotal /></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -249,12 +335,27 @@ const PaymentMethod = () => {
                                                 <p className='paymentmethod-next-accord-total-bottom-p'>Total</p>
                                             </div>
                                             <div>
-                                                <p className='paymentmethod-next-accord-total-bottom-p'>Rp 3.500.000</p>
+                                                <p className='paymentmethod-next-accord-total-bottom-p'>Rp. <PriceTotal /></p>
                                             </div>
                                         </div>
-                                        <div className='paymentmethod-next-accord-button-bg'>
-                                            <button className='paymentmethod-next-accord-button'>Bayar</button>
-                                        </div>
+                                        {(() => {
+                                            if((bca === true) || (bni === true) || (mandiri === true)){
+                                                return(
+                                                    <div className='paymentmethod-next-accord-button-bg'>
+                                                        <button className='paymentmethod-next-accord-button' onClick={handleNewOrder}>Bayar</button>
+                                                    </div>
+                                                )
+                                                
+                                            } else {
+                                                return(
+                                                    <div className='paymentmethod-next-accord-button-bg'>
+                                                        <button className='paymentmethod-next-accord-button-disable'>Bayar</button>
+                                                    </div>
+                                                )
+                                                
+                                            }
+                                        })()}
+                                        
                                     </div>
                                 </Accordion.Body>
                             </Accordion.Item>

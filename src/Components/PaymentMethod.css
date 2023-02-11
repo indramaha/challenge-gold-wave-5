@@ -131,7 +131,19 @@
     line-height: 18px;
 }
 
-.paymentmethod-bank-option-check-bg {
+.paymentmethod-bank-option-check-bca {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.paymentmethod-bank-option-check-bni {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.paymentmethod-bank-option-check-mandiri {
     margin-left: auto;
     display: flex;
     align-items: center;
@@ -159,6 +171,7 @@
     margin-top: 8px;
     display: flex;
     align-items: center;
+    gap: 4px;
 }
 
 .paymentmethod-next-category-p {
@@ -202,13 +215,14 @@
 }
 
 .paymentmethod-next-accord-title-price {
-    margin-left: 190% !important;
+    margin-left: 120% !important;
 }
 
 .paymentmethod-next-accord-title-price-p {
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
+    width: 130px;
 }
 
 .accordion-body {
@@ -307,6 +321,16 @@
 
 .paymentmethod-next-accord-button-bg {
     margin-top: 24px;
+}
+
+.paymentmethod-next-accord-button-disable{
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: none;
+    color: white;
+    background-color: #DEF1DF;
+    border-radius: 2px;
 }
 
 .paymentmethod-next-accord-button {
