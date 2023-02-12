@@ -1,12 +1,29 @@
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import LogoNavbar from '../Assets/logo.png'
 import './Navbar.css'
 
 const NavBar = () =>{
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setIsLogin(false);
+    } else {
+      setIsLogin(true);
+    }
+  });
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    Navigate("/");
+  };
+
     return(
         <>
           {['lg'].map((expand) => (
@@ -33,9 +50,14 @@ const NavBar = () =>{
                       <Nav.Link href="#whyus" className='navbar-item-link'>Why Us</Nav.Link>
                       <Nav.Link href="#testimonial" className='navbar-item-link'>Testimonial</Nav.Link>
                       <Nav.Link href="#faq" className='navbar-item-link'>FAQ</Nav.Link>
+
+                      {isLogin ? (
+                        <button onClick={handleLogout}>Logout</button>
+                      ) : (
                       <Link to='/SigninPage'>
                         <button className='hero-button'>Register</button>
                       </Link>
+                      )}
                     </Nav>
                   </Offcanvas.Body>
                 </Navbar.Offcanvas>
