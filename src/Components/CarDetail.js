@@ -1,12 +1,14 @@
 import { convertToRupiah } from "../utils/function";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { Spinner } from 'react-bootstrap'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css";
 import {Link} from "react-router-dom";
 import {FiUsers} from 'react-icons/fi'
+import "moment/locale/id"
+import moment from "moment/moment"
 
 import './CarDetail.css'
 
@@ -14,6 +16,7 @@ const CarDetail = (props) => {
 
     const {id} = useParams();
     const [car, setCar] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios
@@ -26,12 +29,33 @@ const CarDetail = (props) => {
 
     const [dateRange, setDateRange] = useState([null,null]);
     const [startDate,endDate] = dateRange;
-    console.log(startDate)
-    console.log(endDate)
 
-    const handleButtonLP = () =>{
-        localStorage.setItem("start",startDate)
-        localStorage.setItem("end",endDate)
+    const start = moment(startDate).format('YYYY-MM-DD')
+    const end = moment(endDate).format('YYYY-MM-DD')
+
+    const handleButtonLP = async()  =>{
+        const token = localStorage.getItem("token")
+        const config ={
+            headers:{
+                access_token: token,
+            }
+        }
+
+        const payload ={
+            start_rent_at: start,
+            finish_rent_at :end,
+            car_id: id,
+        };
+
+        const res = await axios.post(`https://bootcamp-rent-cars.herokuapp.com/customer/order/${id}`,payload,config)
+        
+        try{
+            console.log(res);
+            navigate(`/payment/${res.data.id}`)
+        }catch (error) {
+            console.log(error.message);
+        }
+
     }
 
 
@@ -95,9 +119,9 @@ const CarDetail = (props) => {
     function ButtonLP(){
         if(startDate !== null && endDate !== null){
             return(
-            <Link to={`/payment/${car.id}`}>
+            
             <button onClick={handleButtonLP} className="cardetail-result-button">Lanjutkan Pembayaran</button>
-            </Link>
+            
             )
             
         }else{
