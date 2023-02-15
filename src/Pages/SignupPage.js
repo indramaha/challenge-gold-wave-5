@@ -1,7 +1,35 @@
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './SigninPage.css'
 
 const SignupPage = () => {
+    const [emailInput, setEmailinput] = useState("");
+    const [passwordInput, setPasswordinput] = useState("");
+    const navigate = useNavigate();
+    const handleEmail = (e) => {
+      setEmailinput(e.target.value);
+      console.log(emailInput);
+    };
+
+    const handlePassword = (e) => {
+        setPasswordinput(e.target.value);
+        console.log(passwordInput);
+      };
+    
+      const handleRegister = () => {
+        const payload = {
+          email: emailInput,
+          password: passwordInput,
+          role: "Admin",
+        };
+        axios
+          .post('https://bootcamp-rent-cars.herokuapp.com/customer/auth/register', payload)
+          .then((res) => {
+            navigate("/SigninPage");
+          })
+          .catch((err) => console.log(err.message));
+      };
     return (
         <div>
             <div className="signup">
@@ -17,21 +45,21 @@ const SignupPage = () => {
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+                        <input onChange={handleEmail} type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Create Password</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="6+ character"></input>
+                        <input onChange={handlePassword} type="email" class="form-control" id="exampleFormControlInput1" placeholder="6+ character"></input>
                     </div>
                     <div className='butn'>
-                    <button>Sign in</button>
+                    <button onClick={handleRegister}>Sign in</button>
                     </div>
 
                     <div className='ask'>
-                        <p>Don't have an account?</p>
+                        <p>allready have an account?</p>
 
-                        <Link to='/SignupPage'>
-                        <a href=''>Sign up for free</a>
+                        <Link to='/SigninPage'>
+                        <a>Sign in for free</a>
                       </Link>
                         
                     </div>
