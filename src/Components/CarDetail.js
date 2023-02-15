@@ -47,7 +47,7 @@ const CarDetail = (props) => {
             car_id: id,
         };
 
-        const res = await axios.post(`https://bootcamp-rent-cars.herokuapp.com/customer/order/${id}`,payload,config)
+        const res = await axios.post(`https://bootcamp-rent-cars.herokuapp.com/customer/order`,payload,config)
         
         try{
             console.log(res);
