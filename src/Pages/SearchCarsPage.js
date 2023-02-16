@@ -10,13 +10,17 @@ const SearchCarsPage = () => {
     const [carData,setCarData] = useState([])
     
     useEffect(() =>{
+        handleListCar()
+    },[])
+
+    const handleListCar = () => {
         axios
             .get("https://bootcamp-rent-cars.herokuapp.com/customer/v2/car")
             .then((ress) =>{
                 setCarData(ress.data.cars)
             })
             .catch((err) => console.log(err.message))
-    },[])
+    }
 
     const handleFilter = (e) => {
         axios
@@ -33,18 +37,28 @@ const SearchCarsPage = () => {
     }
 
     const [fCategory, setFCategory] = useState('')
+    // console.log(fCategory);
     const handleChangeCategory = (e) => {
         setFCategory(e.target.value)
     }
 
-    const [fMinPrice, setFMinPrice] = useState('')
-    const handleMinPrice = (e) => {
-        setFMinPrice(e.target.value)
-    }
-
-    const [fMaxPrice, setFMaxPrice] = useState('')
-    const handleMaxPrice = (e) => {
-        setFMaxPrice(e.target.value)
+    const [fMinPrice, setFMinPrice] = useState("0")
+    const [fMaxPrice, setFMaxPrice] = useState("0")
+    console.log(fMinPrice, fMaxPrice);
+    const handlePrice = (e) => {
+        if(e.target.value === "small"){
+            setFMinPrice("0")
+            setFMaxPrice("400000")
+        } else if(e.target.value === "medium"){
+            setFMinPrice("400000")
+            setFMaxPrice("600000")
+        } else if(e.target.value === "large"){
+            setFMinPrice("600000")
+            setFMaxPrice("0")
+        } else {
+            setFMinPrice("0")
+            setFMaxPrice("0")
+        }
     }
 
     const [fStatus, setFStatus] = useState('')
@@ -67,8 +81,7 @@ const SearchCarsPage = () => {
                 fMinPrice={fMinPrice}
                 fMaxPrice={fMaxPrice}
                 fStatus={fStatus}
-                minPriceFilter={handleMinPrice}
-                maxPriceFilter = {handleMaxPrice}
+                handlePrice={handlePrice}
                 statusFilter = {handleStatus}
                 isInputDisable={false}
                 isHeroShow={true}
