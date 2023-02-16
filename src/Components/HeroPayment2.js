@@ -1,7 +1,13 @@
 import './HeroPayment2.css'
 import {FiArrowLeft} from 'react-icons/fi'
+import { useLocation } from 'react-router-dom'
 
 const HeroPayment2 = () => {
+    const bank = localStorage.getItem('bank')
+
+    const {state} = useLocation()
+    const orderid = state.id 
+
     return (  
         <div className='heropayment2-section'>
             <div className='heropayment2-left'>
@@ -9,7 +15,8 @@ const HeroPayment2 = () => {
                     <FiArrowLeft size={24}/>
                 </div>
                 <div className='heropayment2-left-text-bg'>
-                    <p className='heropayment2-left-text-p'>Transfer</p>
+                    <p className='heropayment2-left-text-p'>{bank} Transfer</p>
+                    <p className='heropayment2-left-text-p'>Order Id {orderid} </p>
                 </div>
             </div>
             <div className='heropayment2-right'>

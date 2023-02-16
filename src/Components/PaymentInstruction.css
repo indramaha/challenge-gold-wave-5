@@ -6,6 +6,8 @@
     display: flex;
     justify-content: center;
     top: 200px;
+    left: 199px;
+   
 }
 
 .countdown {
@@ -68,6 +70,13 @@
     gap: 8px;
 }
 
+.BankDetail p {
+    width: 557px;
+height: 24px;
+border: 1px solid #3C3C3C;
+border-radius: 2px;
+}
+
 .PaymentMetod {
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
@@ -121,6 +130,7 @@
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     padding: 24px;
+    position: absolute;
 
 }
 
@@ -174,7 +184,7 @@
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     padding: 24px;
-    margin-top: 100px;
+    position:relative;
 
     width: 405px;
     height: 474px;
@@ -213,7 +223,19 @@
     color: #FFFFFF;
 }
 
+.upload-nota-form {
+    margin-top: 10px;
+    padding-top: 60px;
+    border: 1px dashed #D0D0D0;
+    border-radius: 4px;
+    width: 296px;
+    height: 162px;
+    background: #EEEEEE;
+}
 
 
+.main-card-confirmation-pay {
+    width: 405px;
+}
 
 

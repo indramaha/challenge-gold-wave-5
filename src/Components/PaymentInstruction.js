@@ -1,9 +1,42 @@
+import axios from "axios"
 import { useState } from "react"
+import { Navigate, useLocation } from "react-router-dom"
+import { ImageUpload } from "./ImageUpload"
 import "./PaymentInstruction.css"
 
 
 const PaymentIns = () => {
-    
+    const {state} = useLocation()
+    const price = state.price 
+    const orderid = state.id
+
+    const [showConfirmation, setShowConfirmastion] = useState(false)
+    const handleShowConfirmation = () => {
+        setShowConfirmastion(true)
+    }
+
+    //Upload Nota
+    const [slip,setSlip] = useState (null)
+    const handleUploadBtn = () => {
+        const token = localStorage.getItem("token")
+        const config = {
+            headers : {
+                access_token: token
+            },
+        }
+
+        const formData = new FormData()
+        formData.append("slip", slip)
+
+        axios
+            .put('https://bootcamp-rent-cars.herokuapp.com/customer/order/{id}/slip', formData, config)
+            .then((ress) => {
+                Navigate("/PaymentNotif")
+            })
+            .catch((err) => console.log(err.message))
+    }
+
+    console.log (handleUploadBtn)
    
       
     return (
@@ -27,8 +60,8 @@ const PaymentIns = () => {
                     <div className="BankDetail">
                         Nomor Rekening
                         <input placeholder="54104257877"/>
-                        Total Bayar
-                        <input placeholder="Total bayar"/>
+                        Total Bayar 
+                        <p>Rp {price} </p>
                     </div>    
                 </div>
                 <div className="PaymentMetod">
@@ -50,21 +83,29 @@ const PaymentIns = () => {
                     </div>
                 </div>
             </div>
-            <div > 
+            <div className="main-card-confirmation-pay"> 
                 <div className="Confirmation-Pay"> 
                 <p>Klik konfirmasi pembayaran untuk mempercepat proses pengecekan</p>
-                <button className="confirmationButton">Konfirmasi Pembayaran</button>
+                <button className="confirmationButton" onClick={handleShowConfirmation}>Konfirmasi Pembayaran</button>
                 </div>
-                <div className="Upload-Nota">
-                    <h4>Konfirmasi Pembayaran</h4>
-                    <p>Terima kasih telah melakukan konfirmasi pembayaran. Pembayaranmu akan segera kami cek tunggu kurang lebih 10 menit untuk mendapatkan konfirmasi.</p>
-                    <p>Upload Bukti Pembayaran</p>
-                    <p>Untuk membantu kami lebih cepat melakukan pengecekan. Kamu bisa upload bukti bayarmu</p>
-                    <div>
-                        <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);"/>
-                    </div>
-                    <button className="UploadButton" >Upload</button>
-                </div>
+
+                {showConfirmation && (
+                    
+                        <div className="Upload-Nota">
+                        <h4>Konfirmasi Pembayaran</h4>
+                        <p>Terima kasih telah melakukan konfirmasi pembayaran. Pembayaranmu akan segera kami cek tunggu kurang lebih 10 menit untuk mendapatkan konfirmasi.</p>
+                        <p>Upload Bukti Pembayaran</p>
+                        <p>Untuk membantu kami lebih cepat melakukan pengecekan. Kamu bisa upload bukti bayarmu</p>
+                        <div className="upload-nota-form">
+                            <ImageUpload/>
+                        </div>
+                        <button className="UploadButton" onClick={handleUploadBtn}>Upload </button>
+                
+
+                    </div>    
+                )}
+
+                
             </div>
         </div>
         

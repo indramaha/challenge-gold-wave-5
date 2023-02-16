@@ -8,6 +8,7 @@ import SigninPage from './Pages/SigninPage';
 import SignupPage from './Pages/SignupPage';
 import PaymentInsPage from './Pages/PaymentInsPage';
 import PaymentBerhasil from './Pages/PaymentBerhasilPage';
+import ProtectedRoute from './hoc/ProtectedRoute';
 
 
 
@@ -23,6 +24,10 @@ const App = () => {
         <Route path='/payment/:id' element={<PaymentPage />} />
         <Route path='/SigninPage' element={<SigninPage />} />
         <Route path='/SignupPage' element={<SignupPage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path='/paymentIns/:id' element={<PaymentInsPage/>} />
+          <Route path='/payment/:id' element={<PaymentPage />} />
+        </Route>
       </Routes>
     </div>
     
