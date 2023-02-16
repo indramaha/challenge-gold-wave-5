@@ -76,7 +76,7 @@ const CarDetail = (props) => {
     function Category() {
         const isCategory = car.category;
         // console.log(isCategory)
-        if (isCategory == "small") {
+        if (isCategory === "small") {
             return(
                 <div className='cardetail-category-bg'>
                     <div>
@@ -87,7 +87,7 @@ const CarDetail = (props) => {
                     </div>
                 </div>
             )
-        } else if (isCategory == "Medium") {
+        } else if (isCategory === "Medium") {
             return(
                 <div className='cardetail-category-bg'>
                     <div>
@@ -98,7 +98,7 @@ const CarDetail = (props) => {
                     </div>
                 </div>
             )
-        } else if (isCategory == "large") {
+        } else if (isCategory === "large") {
             return(
                 <div className='cardetail-category-bg'> 
                     <div>
@@ -116,19 +116,24 @@ const CarDetail = (props) => {
         }
     }
 
+    const token = localStorage.getItem("token")
+    // console.log(token);
+
     function ButtonLP(){
-        if(startDate !== null && endDate !== null){
+        if(startDate !== null && endDate !== null && token !== null){
             return(
-            
-            <button onClick={handleButtonLP} className="cardetail-result-button">Lanjutkan Pembayaran</button>
-            
+                <button onClick={handleButtonLP} className="cardetail-result-button">Lanjutkan Pembayaran</button>
             )
-            
-        }else{
+        }else if(token === null){
             return(
-            <button className="cardetail-result-button">pilih tanggal</button>
+                <Link to={"/SigninPage"}>
+                    <button className="cardetail-result-button">pilih tanggal</button>
+                </Link>
             )
-            
+        }else if (startDate === null && endDate === null){
+            return(
+                <button className="cardetail-result-button">pilih tanggal</button>
+            )
         }
 
     }
@@ -226,7 +231,6 @@ const CarDetail = (props) => {
                                 </div>
                             </div>
                             <ButtonLP />
-                            
                         </div>
                         </div>
                     </div>
