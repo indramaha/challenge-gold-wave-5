@@ -1,0 +1,79 @@
+h1, h2, h3, h4, h5, h6, a, ul, li, p {
+    margin: 0 !important;
+}
+
+.heropayment3-section {
+    display: flex;
+    justify-content: space-around;
+    background-color: #F1F3FF;
+    padding-top: 42px;
+    padding-bottom: 47px ;
+}
+
+.heropayment3-left {
+    display: flex;
+    align-items: center;
+}
+
+.heropayment3-left-text-bg {
+    margin-left: 16px;
+}
+
+.heropayment3-left-text-p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.heropayment3-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.heropayment3-right-content {
+    display: flex;
+}
+
+.heropayment3-right-content-number-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #0D28A6;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #0D28A6;
+}
+
+.heropayment3-right-content-number-p {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #F1F3FF;
+}
+
+.heropayment3-right-content-text-bg {
+    margin-left: 8px;
+}
+
+.heropayment3-right-content-text-p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.heropayment3-rectangle-bg {
+    display: flex;
+    justify-content: center;
+}
+
+.heropayment3-rectangle {
+    background-color: #0D28A6;
+    width: 28px;
+    height: 1px;
+}

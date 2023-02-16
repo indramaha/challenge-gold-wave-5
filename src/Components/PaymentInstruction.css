@@ -1,10 +1,11 @@
 
 
 .PaymentIns-Home {
+    width: 100%;
+    padding-top: 40px;
     display: flex;
-    margin-top: 40px;
-    margin-right: 199px;
-    margin-left: 372px;
+    justify-content: center;
+    top: 200px;
 }
 
 .countdown {
@@ -63,7 +64,7 @@
     font-size: 12px;
     line-height: 18px;
 
-    padding-top: 78px;
+    padding-top: 16px;
     gap: 8px;
 }
 
@@ -148,6 +149,69 @@
     color: #FFFFFF;
 }
 
+.NorekBCR {
+    display: flex;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.BoxBCA {
+    border: 1px solid #D0D0D0;
+    border-radius: 4px;
+    width: 61px;
+    height: 30px;
+    
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.Upload-Nota {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 100px;
+
+    width: 405px;
+    height: 474px;
+}
+
+.Upload-Nota h4 {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.Upload-Nota p {
+    padding-top: 10px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.UploadButton {
+    width: 358px;
+    height: 36px;
+    border-radius: 2px;
+    background: #5CB85F;
+    margin-top: 44px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
 
 
 

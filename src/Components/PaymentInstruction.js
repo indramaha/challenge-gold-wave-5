@@ -1,7 +1,11 @@
+import { useState } from "react"
 import "./PaymentInstruction.css"
 
 
 const PaymentIns = () => {
+    
+   
+      
     return (
         <div className="PaymentIns-Home">
             <div className="Instruction-Content">
@@ -11,9 +15,18 @@ const PaymentIns = () => {
                 </div>
                 <div className="BankAcc">
                     <h3 className="BankAccH3">Lakukan Transfer Ke</h3>
+                    <div className="NorekBCR">
+                        <div className="BoxBCA"> 
+                        <p> BCA </p>
+                        </div>
+                        <div> 
+                        <p> BCA Transfer </p>
+                        <p> a.n Binar Car Rental</p>
+                        </div>
+                    </div>
                     <div className="BankDetail">
                         Nomor Rekening
-                        <input placeholder="Nomor Rekening"/>
+                        <input placeholder="54104257877"/>
                         Total Bayar
                         <input placeholder="Total bayar"/>
                     </div>    
@@ -37,11 +50,24 @@ const PaymentIns = () => {
                     </div>
                 </div>
             </div>
-            <div className="Confirmation-Pay">
+            <div > 
+                <div className="Confirmation-Pay"> 
                 <p>Klik konfirmasi pembayaran untuk mempercepat proses pengecekan</p>
                 <button className="confirmationButton">Konfirmasi Pembayaran</button>
+                </div>
+                <div className="Upload-Nota">
+                    <h4>Konfirmasi Pembayaran</h4>
+                    <p>Terima kasih telah melakukan konfirmasi pembayaran. Pembayaranmu akan segera kami cek tunggu kurang lebih 10 menit untuk mendapatkan konfirmasi.</p>
+                    <p>Upload Bukti Pembayaran</p>
+                    <p>Untuk membantu kami lebih cepat melakukan pengecekan. Kamu bisa upload bukti bayarmu</p>
+                    <div>
+                        <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);"/>
+                    </div>
+                    <button className="UploadButton" >Upload</button>
+                </div>
             </div>
         </div>
+        
     )
 }
 

@@ -7,6 +7,7 @@ import PaymentPage from './Pages/PaymentPage';
 import SigninPage from './Pages/SigninPage';
 import SignupPage from './Pages/SignupPage';
 import PaymentInsPage from './Pages/PaymentInsPage';
+import PaymentBerhasil from './Pages/PaymentBerhasilPage';
 
 
 
@@ -18,6 +19,7 @@ const App = () => {
         <Route path='/searchcar' element={<SearchCarsPage />} />
         <Route path='/cardetail/:id' element={<CarDetailPage />} />
         <Route path='/paymentIns/:id' element={<PaymentInsPage/>} />
+        <Route path='/PaymentNotif' element={<PaymentBerhasil/>} />
         <Route path='/payment/:id' element={<PaymentPage />} />
         <Route path='/SigninPage' element={<SigninPage />} />
         <Route path='/SignupPage' element={<SignupPage />} />
