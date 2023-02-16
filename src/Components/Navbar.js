@@ -17,10 +17,11 @@ const NavBar = () =>{
     } else {
       setIsLogin(true);
     }
-  });
+  },[]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    setIsLogin(false)
     Navigate("/");
   };
 
@@ -54,7 +55,7 @@ const NavBar = () =>{
                       {isLogin ? (
                         <button onClick={handleLogout}>Logout</button>
                       ) : (
-                      <Link to='/SigninPage'>
+                      <Link to='/SignupPage'>
                         <button className='hero-button'>Register</button>
                       </Link>
                       )}
