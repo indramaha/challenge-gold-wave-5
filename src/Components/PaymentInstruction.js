@@ -1,14 +1,15 @@
 import axios from "axios"
 import { useState } from "react"
-import { Navigate, useLocation } from "react-router-dom"
+import { Link, Navigate, useLocation } from "react-router-dom"
 import { ImageUpload } from "./ImageUpload"
 import "./PaymentInstruction.css"
 
 
 const PaymentIns = () => {
     const {state} = useLocation()
-    const price = state.price 
+    const price = state.price
     const orderid = state.id
+    console.log (state)
 
     const [showConfirmation, setShowConfirmastion] = useState(false)
     const handleShowConfirmation = () => {
@@ -17,26 +18,24 @@ const PaymentIns = () => {
 
     //Upload Nota
     const [slip,setSlip] = useState (null)
-    const handleUploadBtn = () => {
+    console.log (slip)
+
+    const handleUploadBtn = async() => {
         const token = localStorage.getItem("token")
         const config = {
-            headers : {
-                access_token: token
-            },
+            headers: {
+                access_token: token,
+            }
         }
 
-        const formData = new FormData()
-        formData.append("slip", slip)
-
-        axios
-            .put('https://bootcamp-rent-cars.herokuapp.com/customer/order/{id}/slip', formData, config)
-            .then((ress) => {
-                Navigate("/PaymentNotif")
-            })
-            .catch((err) => console.log(err.message))
-    }
-
-    console.log (handleUploadBtn)
+        const res = await axios.put(`https://bootcamp-rent-cars.herokuapp.com/customer/order/{id}/slip`, config)
+        try {
+            // console.log(res.data)
+            setSlip(res.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }   
    
       
     return (
@@ -99,8 +98,10 @@ const PaymentIns = () => {
                         <div className="upload-nota-form">
                             <ImageUpload/>
                         </div>
+
+                        <Link to={`/paymentnotif/${state.id}`}> 
                         <button className="UploadButton" onClick={handleUploadBtn}>Upload </button>
-                
+                        </Link>
 
                     </div>    
                 )}

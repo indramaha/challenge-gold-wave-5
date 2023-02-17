@@ -4,7 +4,9 @@ import SimbolSukses from "../Assets/SimbolSukses.png"
 import "./PaymentBerhasilPage.css"
 import HeroPayment3 from "../Components/HeroPayment3";
 
+
 const PaymentBerhasil = () => {
+
     return (
         <div>
             <NavBar/>
