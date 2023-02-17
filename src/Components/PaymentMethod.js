@@ -40,6 +40,8 @@ const PaymentMethod = () => {
         }
     }
 
+    console.log (getDetailOrder)
+
     const handleBcaMethode = () => {
         setBca(true)
         setBni(false)
@@ -320,7 +322,18 @@ const PaymentMethod = () => {
                                                         if((bca === true) || (bni === true) || (mandiri === true)){
                                                             return(
                                                                 <div className='paymentmethod-next-accord-button-bg'>
-                                                                    <Link to={`/paymentIns/${order.id}`}>
+                                                                    <Link to={`/paymentIns/${order.id}`}
+                                                                    state = {{
+                                                                        price: PriceTotal (order.Car.price),
+                                                                        id: order.id,
+                                                                        NamaMobil: order.Car.name,
+                                                                        Mulai: order.start_rent_at,
+                                                                        Berakhir: order.finish_rent_at
+
+                                                                    }}
+                                                                
+                                                                    >
+                                                                        
                                                                         <button className='paymentmethod-next-accord-button' >Bayar</button>
                                                                     </Link>
                                                                 </div>
