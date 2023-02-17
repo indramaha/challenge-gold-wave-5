@@ -7,11 +7,6 @@ import PaymentIns from "../Components/PaymentInstruction";
 
 const PaymentInsPage = () => {
 
-
-
-   
-
-
     return ( 
         <div>
             <NavBar />
@@ -21,7 +16,6 @@ const PaymentInsPage = () => {
 
             
             <PaymentIns />
-
             {/* tempat componen mas andre end */}
 
             

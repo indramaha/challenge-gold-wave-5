@@ -10,6 +10,9 @@ import jsPDF from 'jspdf';
 const PaymentBerhasil = () => {
     const price = localStorage.getItem ('price')
     const orderid = localStorage.getItem ('order-ID')
+    const NamaMobil = localStorage.getItem ('Nama-Mobil')
+    const Mulai = localStorage.getItem ('Mulai-Sewa')
+    const Berakhir = localStorage.getItem ('Berakhir-Sewa')
 
     const downloadPdf = () => {
         const input = document.getElementById('Invoice'); //ini id yang sama dengan line 52
@@ -36,7 +39,7 @@ const PaymentBerhasil = () => {
                 <div className="Payment-Berhasil-Card">
                     <div>
                         <h3> Invoice</h3>
-                        <p> *no invoice</p>
+                        
                     </div>
                     <div>
                         <button onClick={downloadPdf}>Unduh</button>
@@ -44,10 +47,19 @@ const PaymentBerhasil = () => {
                 </div>
 
 
-                <div id="Invoice">
-                    PDF VIEWER
-                    <p>total bayar : {price}</p>
-                    <p>order id : {orderid}</p>
+                <div className="Pdf-Viewer" id="Invoice">
+                    <h3>BINAR CAR RENTAL INVOICE</h3>
+
+                    <div className="Info-Mobil"> 
+                        <p>Order ID : {orderid}</p>
+                        <p>Jenis Mobil : {NamaMobil}</p>
+                        <p>Total Bayar : Rp. {price},-</p>
+                    </div>
+                    <div className="JangkaWaktu-Sewa"> 
+                        <p>Mulai Sewa : {Mulai}</p>
+                        <p>Berakhir Sewa : {Berakhir}</p>
+                    </div>
+                    
                 </div>
             </div>
            

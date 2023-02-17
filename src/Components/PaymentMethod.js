@@ -326,6 +326,10 @@ const PaymentMethod = () => {
                                                                     state = {{
                                                                         price: PriceTotal (order.Car.price),
                                                                         id: order.id,
+                                                                        NamaMobil: order.Car.name,
+                                                                        Mulai: order.start_rent_at,
+                                                                        Berakhir: order.finish_rent_at
+
                                                                     }}
                                                                 
                                                                     >

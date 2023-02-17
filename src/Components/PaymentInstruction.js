@@ -10,6 +10,11 @@ const PaymentIns = () => {
   const { state } = useLocation();
   const price = state.price;
   const orderid = state.id;
+  const NamaMobil = state.NamaMobil;
+  const Mulai = state.Mulai;
+  const Berakhir = state.Berakhir
+
+  console.log (Berakhir)
   
 
   const [showConfirmation, setShowConfirmastion] = useState(false);
@@ -46,6 +51,9 @@ const PaymentIns = () => {
   const handleUploadBtn = () => {
     localStorage.setItem ('price',price)
     localStorage.setItem ('order-ID',orderid)
+    localStorage.setItem ('Nama-Mobil',NamaMobil )
+    localStorage.setItem ('Mulai-Sewa',Mulai)
+    localStorage.setItem ('Berakhir-Sewa',Berakhir)
     
     const token = localStorage.getItem('token');
     const config = {
@@ -69,7 +77,7 @@ const PaymentIns = () => {
       .catch((err) => console.log(err.message));
   };
 
-  console.log(handleUploadBtn);
+ 
 
   return (
     <div className='PaymentIns-Home'>
