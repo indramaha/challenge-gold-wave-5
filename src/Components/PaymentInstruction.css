@@ -1,10 +1,13 @@
 
 
 .PaymentIns-Home {
+    width: 100%;
+    padding-top: 40px;
     display: flex;
-    margin-top: 40px;
-    margin-right: 199px;
-    margin-left: 372px;
+    justify-content: center;
+    top: 200px;
+    left: 199px;
+   
 }
 
 .countdown {
@@ -12,6 +15,7 @@
     border-radius: 8px;
     margin-right: 32px;
     padding-left: 24px;
+    padding-right: 24px;
     padding-top: 24px;
     padding-bottom: 17.05px;
     width: 605px;
@@ -20,7 +24,7 @@
 }
 
 .batasWaktu {
-    padding-top: 14.5px;
+    padding-top: 5px;
 }
 
 .countdownH3 {
@@ -31,7 +35,6 @@
     line-height: 20px;
     
 }
-
 
 
 .BankAcc {
@@ -63,8 +66,15 @@
     font-size: 12px;
     line-height: 18px;
 
-    padding-top: 78px;
+    padding-top: 16px;
     gap: 8px;
+}
+
+.BankDetail p {
+    width: 557px;
+height: 24px;
+border: 1px solid #3C3C3C;
+border-radius: 2px;
 }
 
 .PaymentMetod {
@@ -120,6 +130,7 @@
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     padding: 24px;
+    position: absolute;
 
 }
 
@@ -148,7 +159,101 @@
     color: #FFFFFF;
 }
 
+.NorekBCR {
+    display: flex;
+    gap: 16px;
+    padding-top: 16px;
+}
 
+.BoxBCA {
+    border: 1px solid #D0D0D0;
+    border-radius: 4px;
+    width: 61px;
+    height: 30px;
+    
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.Upload-Nota {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 24px;
+    position:relative;
+
+    width: 405px;
+    height: 474px;
+}
+
+.Upload-Nota h4 {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.Upload-Nota p {
+    padding-top: 10px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.UploadButton {
+    width: 358px;
+    height: 36px;
+    border-radius: 2px;
+    background: #5CB85F;
+    margin-top: 44px;
+
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.upload-nota-form {
+    margin-top: 10px;
+    padding-top: 10px;
+    border: 1px dashed #D0D0D0;
+    border-radius: 4px;
+    width: 296px;
+    height: 162px;
+    background: #EEEEEE;
+    font-size: 14px;
+}
+
+.upload-nota-form img {
+    width: 110px;
+    height: 110px;
+    margin-left: 30%;
+}
+
+
+.main-card-confirmation-pay {
+    width: 405px;
+}
+
+.countdown1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upload-nota-card {
+    display: flex;
+    justify-content: space-between;
+}
 
 
 

@@ -1,0 +1,64 @@
+.Payment-Sukses-Icon {
+    margin-top: 40px;
+}
+
+.Payment-Sukses-Icon h4 {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 16px;
+}
+
+.Payment-Sukses-Icon p {
+    padding-top: 16px;
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.Payment-Berhasil-Card {
+    display: flex;
+    
+   
+    justify-content: space-between;
+    padding: 24px;
+
+}
+
+.Payment-Berhasil-Card button {
+    width: 97px;
+    height: 36px;
+    border: 1px solid #0D28A6;
+    border-radius: 2px;
+    background: #FFFFFF;
+    color: #0D28A6;
+}
+
+.Payment-Berhasil {
+    width: 605px;
+    height: 390px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    margin-top: 40px;
+    border-color: black;
+    
+}
+
+.Pdf-Viewer {
+    padding: 10px;
+    background: #EEEEEE;
+    width: 557px;
+    height: 250px;
+}
+
+.Info-Mobil {
+    padding-top: 30px;
+}
+
+.JangkaWaktu-Sewa {
+    padding-top: 30px;
+}
