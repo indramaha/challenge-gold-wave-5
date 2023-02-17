@@ -9,6 +9,7 @@ import SignupPage from './Pages/SignupPage';
 import PaymentInsPage from './Pages/PaymentInsPage';
 import PaymentBerhasil from './Pages/PaymentBerhasilPage';
 import ProtectedRoute from './hoc/ProtectedRoute';
+import Deadlineshow from './Components/deadline';
 
 
 
@@ -28,6 +29,7 @@ const App = () => {
           <Route path='/paymentIns/:id' element={<PaymentInsPage/>} />
           <Route path='/payment/:id' element={<PaymentPage />} />
         </Route>
+        <Route path='/dummy' element={<Deadlineshow/>}/>
       </Routes>
     </div>
     

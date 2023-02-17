@@ -15,6 +15,7 @@
     border-radius: 8px;
     margin-right: 32px;
     padding-left: 24px;
+    padding-right: 24px;
     padding-top: 24px;
     padding-bottom: 17.05px;
     width: 605px;
@@ -23,7 +24,7 @@
 }
 
 .batasWaktu {
-    padding-top: 14.5px;
+    padding-top: 5px;
 }
 
 .countdownH3 {
@@ -34,7 +35,6 @@
     line-height: 20px;
     
 }
-
 
 
 .BankAcc {
@@ -231,11 +231,30 @@ border-radius: 2px;
     width: 296px;
     height: 162px;
     background: #EEEEEE;
+    font-size: 14px;
+}
+
+.upload-nota-form img {
+    width: 110px;
+    height: 110px;
+    margin-left: 30%;
 }
 
 
 .main-card-confirmation-pay {
     width: 405px;
 }
+
+.countdown1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upload-nota-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 

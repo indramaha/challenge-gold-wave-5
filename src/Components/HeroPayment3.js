@@ -1,11 +1,9 @@
 import './HeroPayment3.css'
 import {FiArrowLeft} from 'react-icons/fi'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 
 const HeroPayment3 = () => {
-
-    const {state} = useLocation()
-   
+   const {id} = useParams()
 
     return (  
         <div className='heropayment3-section'>
@@ -15,7 +13,7 @@ const HeroPayment3 = () => {
                 </div>
                 <div className='heropayment3-left-text-bg'>
                     <p className='heropayment3-left-text-p'>Tiket</p>
-                    <p className='heropayment3-left-text-p'>Order ID </p>
+                    <p className='heropayment3-left-text-p'>Order ID {`${id}`} </p>
                 </div>
             </div>
             <div className='heropayment3-right'>

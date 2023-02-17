@@ -1,0 +1,14 @@
+.countdown-bg {
+    width: 100%;
+    background-color: red;
+    color: white;
+
+    
+}
+
+.countdown-bg h2 {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 200px;
+    font-size: 19px;
+}
