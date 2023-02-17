@@ -40,8 +40,6 @@ const PaymentMethod = () => {
         }
     }
 
-    console.log (getDetailOrder)
-
     const handleBcaMethode = () => {
         setBca(true)
         setBni(false)
@@ -70,7 +68,7 @@ const PaymentMethod = () => {
     const PriceTotal = (isPrice) => {
         const dateCount = (Math.round((endDate - startDate) / (1000 * 60 * 60 * 24))) +1
         const totalPrice = isPrice * (dateCount)
-        if ((dateCount >= 0) && (dateCount < 7)) {
+        if ((dateCount >= 0) && (dateCount <= 7)) {
             return convertToRupiah(totalPrice)
         } else if (dateCount < 0) {
             return 0

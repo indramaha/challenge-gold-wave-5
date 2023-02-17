@@ -1,20 +1,23 @@
+import { Link } from 'react-router-dom';
 import './HeroPayment.css'
 import {FiArrowLeft} from 'react-icons/fi'
 
 const HeroPayment = () => {
     return (  
         <div className='heropayment-section'>
-            <div className='heropayment-left'>
-                <div>
-                    <FiArrowLeft size={24}/>
+            <Link to={"/searchcar"}>
+                <div className='heropayment-left'>
+                    <div>
+                        <FiArrowLeft size={24}/>
+                    </div>
+                    <div className='heropayment-left-text-bg'>
+                        <p className='heropayment-left-text-p'>Pembayaran</p>
+                    </div>
                 </div>
-                <div className='heropayment-left-text-bg'>
-                    <p className='heropayment-left-text-p'>Pembayaran</p>
-                </div>
-            </div>
+            </Link>
             <div className='heropayment-right'>
                 <div className='heropayment-right-content'>
-                    <div className='heropayment-right-content-number-bg'>
+                    <div className='heropayment-right-content-number-1-bg'>
                         <p className='heropayment-right-content-number-p'>1</p>
                     </div>
                     <div className='heropayment-right-content-text-bg'>

@@ -11,16 +11,8 @@ const PaymentInsPage = () => {
         <div>
             <NavBar />
             <HeroPayment2 />
-            {/* tempat componen bagus start */}
-
-
-            
             <PaymentIns />
-            {/* tempat componen mas andre end */}
-
-            
             <Footer />
-            
         </div>
     );
 }

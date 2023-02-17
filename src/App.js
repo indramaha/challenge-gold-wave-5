@@ -20,14 +20,12 @@ const App = () => {
         <Route path='/' element={<LandingPage />} />
         <Route path='/searchcar' element={<SearchCarsPage />} />
         <Route path='/cardetail/:id' element={<CarDetailPage />} />
-        <Route path='/paymentIns/:id' element={<PaymentInsPage/>} />
-        <Route path='/paymentnotif/:id' element={<PaymentBerhasil/>} />
-        <Route path='/payment/:id' element={<PaymentPage />} />
         <Route path='/SigninPage' element={<SigninPage />} />
         <Route path='/SignupPage' element={<SignupPage />} />
         <Route element={<ProtectedRoute />}>
           <Route path='/paymentIns/:id' element={<PaymentInsPage/>} />
           <Route path='/payment/:id' element={<PaymentPage />} />
+          <Route path='/paymentnotif/:id' element={<PaymentBerhasil/>} />
         </Route>
         <Route path='/dummy' element={<Deadlineshow/>}/>
       </Routes>
