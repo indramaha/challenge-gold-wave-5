@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import {FiUsers} from 'react-icons/fi'
 import "moment/locale/id"
 import moment from "moment/moment"
+import { addDays } from 'date-fns';
 
 import './CarDetail.css'
 
@@ -213,6 +214,7 @@ const CarDetail = (props) => {
                                     startDate={startDate}
                                     endDate={endDate}
                                     minDate={new Date()}
+                                    maxDate={addDays(startDate, 6)}
                                     onChange = {(update)=>{
                                         setDateRange(update);
                                     }}
