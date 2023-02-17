@@ -3,8 +3,7 @@
     justify-content: center;
     position: absolute;
     top: 450px;
-    background-color: white;
-    left: 320px;
+    width: 100%;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -17,8 +16,7 @@
     justify-content: center;
     position: absolute;
     top: 270px;
-    background-color: white;
-    left: 355px;
+    width: 100%;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -31,6 +29,7 @@
     flex-direction: column;
     padding: 24px;
     border-radius: 8px;
+    background-color: white;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
@@ -59,6 +58,7 @@
     display: flex;
     flex-direction: column;
     padding: 24px;
+    background-color: white;
     border-radius: 8px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -118,7 +118,7 @@
     font-family: 'Rubik', sans-serif;
     border: 1px solid #CCCCCC;
     padding: 9px 12px;
-    width: 210px;
+    width: 237.75px;
     background-color: #D0D0D0;
     border-radius: 0.375rem;
     -webkit-border-radius: 0.375rem;
@@ -138,7 +138,7 @@
 }
 
 .filtercars-select-disable {
-    width: 210px !important;
+    width: 237.75px !important;
     padding-top: 9px !important;
     padding-bottom: 9px !important;
     font-size: 12px !important;
@@ -220,8 +220,7 @@
         justify-content: center;
         position: absolute;
         top: 450px;
-        background-color: white;
-        left: 75px;
+        width: 100%;
         border-radius: 8px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -234,8 +233,7 @@
         justify-content: center;
         position: absolute;
         top: 270px;
-        background-color: white;
-        left: 75px;
+        width: 100%;
         border-radius: 8px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -250,8 +248,7 @@
         justify-content: center;
         position: absolute;
         top: 450px;
-        background-color: white;
-        left: 90px;
+        width: 100%;
         border-radius: 8px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
@@ -264,8 +261,7 @@
         justify-content: center;
         position: absolute;
         top: 270px;
-        background-color: white;
-        left: 90px;
+        width: 100%;
         border-radius: 8px;
         -webkit-border-radius: 8px;
         -moz-border-radius: 8px;
