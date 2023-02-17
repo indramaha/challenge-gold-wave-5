@@ -10,6 +10,11 @@ h1, h2, h3, h4, h5, h6, a, ul, li, p {
     padding-bottom: 110px ;
 }
 
+.heropayment-section a {
+    text-decoration: none;
+    color: black;
+}
+
 .heropayment-left {
     display: flex;
     align-items: center;
@@ -33,6 +38,22 @@ h1, h2, h3, h4, h5, h6, a, ul, li, p {
 
 .heropayment-right-content {
     display: flex;
+}
+
+.heropayment-right-content-number-1-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #0D28A6;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: #0D28A6;
+    color: white;
 }
 
 .heropayment-right-content-number-bg {

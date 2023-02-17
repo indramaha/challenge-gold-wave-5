@@ -42,8 +42,8 @@ const SearchCarsPage = () => {
         setFCategory(e.target.value)
     }
 
-    const [fMinPrice, setFMinPrice] = useState("0")
-    const [fMaxPrice, setFMaxPrice] = useState("0")
+    const [fMinPrice, setFMinPrice] = useState("")
+    const [fMaxPrice, setFMaxPrice] = useState("")
     console.log(fMinPrice, fMaxPrice);
     const handlePrice = (e) => {
         if(e.target.value === "small"){

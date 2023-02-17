@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import {FiUsers} from 'react-icons/fi'
 import "moment/locale/id"
 import moment from "moment/moment"
+import { addDays } from 'date-fns';
 
 import './CarDetail.css'
 
@@ -207,6 +208,7 @@ const CarDetail = (props) => {
                                 <Category />
                             </div>
                             <div className="cardetail-result-date-input">
+<<<<<<< HEAD
                                 <p className="cardetail-resulut-date-input-p">Tentukan lama sewa mobil (max 7 hari)</p>
                                 <div className="cardetail-datepicker">
                                     <DatePicker
@@ -224,6 +226,23 @@ const CarDetail = (props) => {
                                     />
                                 </div>
                             </div>
+=======
+                                <p>Tentukan lama sewa mobil (max 7 hari)</p>
+                                <DatePicker
+                                    selectsRange={true}
+                                    startDate={startDate}
+                                    endDate={endDate}
+                                    minDate={new Date()}
+                                    maxDate={addDays(startDate, 6)}
+                                    onChange = {(update)=>{
+                                        setDateRange(update);
+                                    }}
+                                    dateFormat="dd MMMM yyyy"
+                                    isClearable={true}
+                                    placeholderText="Pilih tanggal mulai dan tanggal akhir sewa"
+                                    showDisableMonthNavigation
+                                />
+>>>>>>> 032e3748f30fbbd49ef3370058f76d7a837ac673
                         
                             <div className="cardetail-result-price-bg">
                                 <div>

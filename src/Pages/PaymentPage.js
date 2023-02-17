@@ -8,12 +8,7 @@ const PaymentPage = () => {
         <div>
             <NavBar />
             <HeroPayment />
-            {/* tempat componen bagus start */}
             <PaymentMethod />
-            {/* tempat componen bagus end */}
-
-
-        
             <Footer />
         </div>
     );
