@@ -3,12 +3,13 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LogoNavbar from '../Assets/logo.png'
 import './Navbar.css'
 
 const NavBar = () =>{
   const [isLogin, setIsLogin] = useState(false);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -22,7 +23,7 @@ const NavBar = () =>{
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsLogin(false)
-    Navigate("/");
+    navigate("/");
   };
 
     return(

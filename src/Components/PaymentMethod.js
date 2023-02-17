@@ -40,8 +40,6 @@ const PaymentMethod = () => {
         }
     }
 
-    console.log (getDetailOrder)
-
     const handleBcaMethode = () => {
         setBca(true)
         setBni(false)
