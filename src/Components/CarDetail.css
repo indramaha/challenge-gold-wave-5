@@ -51,14 +51,22 @@
 .cardetail-result {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
+    height: fit-content;
+    width: 408px;
 }
 
 .cardetail-img-bg {
-    padding: 28px 67px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .cardetail-img {
     width: 270px;
+    height: 160px;
+    object-fit: cover;
 }
 
 .cardetail-result-desc {
@@ -67,6 +75,7 @@
 
 .cardetail-category {
     margin-top: 8px;
+    
 }
 
 .cardetail-category-bg {
@@ -93,6 +102,58 @@
     margin: 0;
 }
 
+.cardetail-result-date-input {
+    margin-top: 8px;
+}
+
+.cardetail-resulut-date-input-p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.cardetail-datepicker{
+    display: flex;
+    border: 1px solid #009C96;
+    border-radius: 2px;
+    padding: 12px 20px;
+    margin-top: 8px;
+}
+
+.react-datepicker__input-container input {
+    border: none;
+    width: 100%;
+}
+
+.react-datepicker__input-container input::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.react-datepicker__input-container input:focus-visible {
+    outline: none !important;
+}
+
+.react-datepicker__day--in-range {
+    background-color: #35B0A7 !important;
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -ms-border-radius: 50% !important;
+    -o-border-radius: 50% !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+    background-color: #35B0A7 !important;
+}
+
+.react-datepicker__header  {
+    background-color: white !important;
+    border-bottom: none !important;
+}
+
+
 .cardetail-result-price-bg {
     display: flex;
     justify-content: space-between;
@@ -106,6 +167,10 @@
     margin: 0;
 }
 
+.cardetail-result-price-bg{
+    margin-top: 16px;
+}
+
 .cardetail-result-price-p-bg {
     margin-bottom: 60px;
 }
@@ -116,6 +181,19 @@
     line-height: 20px;
     color: black;
     margin: 0;
+}
+
+.cardetail-result-button{
+    border: none;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #5CB85F;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    border-radius: 2px;
 }
 
 .carsshow-loading {

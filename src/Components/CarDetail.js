@@ -127,12 +127,12 @@ const CarDetail = (props) => {
         }else if(token === null){
             return(
                 <Link to={"/SigninPage"}>
-                    <button className="cardetail-result-button">pilih tanggal</button>
+                    <button className="cardetail-result-button">Lanjutkan Pembayaran</button>
                 </Link>
             )
         }else if (startDate === null && endDate === null){
             return(
-                <button className="cardetail-result-button">pilih tanggal</button>
+                <button className="cardetail-result-button">Lanjutkan Pembayaran</button>
             )
         }
 
@@ -207,20 +207,23 @@ const CarDetail = (props) => {
                                 <Category />
                             </div>
                             <div className="cardetail-result-date-input">
-                                <p>Tentukan lama sewa mobil (max 7 hari)</p>
-                                <DatePicker
-                                    selectsRange={true}
-                                    startDate={startDate}
-                                    endDate={endDate}
-                                    minDate={new Date()}
-                                    onChange = {(update)=>{
-                                        setDateRange(update);
-                                    }}
-                                    dateFormat="dd MMMM yyyy"
-                                    isClearable={true}
-                                    placeholderText="Pilih tanggal mulai dan tanggal akhir sewa"
-                                    showDisableMonthNavigation
-                                />
+                                <p className="cardetail-resulut-date-input-p">Tentukan lama sewa mobil (max 7 hari)</p>
+                                <div className="cardetail-datepicker">
+                                    <DatePicker
+                                        selectsRange={true}
+                                        startDate={startDate}
+                                        endDate={endDate}
+                                        minDate={new Date()}
+                                        onChange = {(update)=>{
+                                            setDateRange(update);
+                                        }}
+                                        dateFormat="dd MMMM yyyy"
+                                        isClearable={true}
+                                        placeholderText="Pilih tanggal mulai dan tanggal akhir sewa"
+                                        showDisableMonthNavigation
+                                    />
+                                </div>
+                            </div>
                         
                             <div className="cardetail-result-price-bg">
                                 <div>
@@ -231,7 +234,7 @@ const CarDetail = (props) => {
                                 </div>
                             </div>
                             <ButtonLP />
-                        </div>
+                        
                         </div>
                     </div>
                     ):(<div className='carsshow-loading'><Spinner animation='grow' variant='primary'/></div>)
